@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamhouse — Naomi & Jana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/house.css">
+  <link rel="stylesheet" href="css/rooms.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Sparkle container -->
+  <div class="sparkles" id="sparkles"></div>
+
+  <!-- ==================== HOUSE VIEW ==================== -->
+  <section class="view view--house active" id="houseView">
+    <!-- Sky / Background -->
+    <div class="sky">
+      <div class="stars"></div>
+      <div class="city-skyline">
+        <div class="building b1"></div>
+        <div class="building b2"></div>
+        <div class="building b3"></div>
+        <div class="building b4"></div>
+        <div class="building b5"></div>
+        <div class="building b6"></div>
+        <div class="building b7"></div>
+        <div class="building b8"></div>
+      </div>
+    </div>
+
+    <!-- Title -->
+    <header class="house-header">
+      <h1 class="house-title">
+        <span class="title-dream">Dream</span><span class="title-house">house</span>
+      </h1>
+      <p class="house-subtitle">a portfolio by <strong>Naomi</strong> & <strong>Jana</strong></p>
+      <p class="house-hint">click a room to explore</p>
+    </header>
+
+    <!-- The Dollhouse -->
+    <div class="dollhouse">
+      <!-- Roof -->
+      <div class="roof">
+        <div class="roof-main"></div>
+        <div class="roof-trim"></div>
+        <div class="roof-chimney"></div>
+        <div class="roof-antenna">
+          <div class="antenna-pole"></div>
+          <div class="antenna-star">&#10022;</div>
+        </div>
+      </div>
+
+      <!-- House Frame -->
+      <div class="house-frame">
+        <!-- Floor 2 (Top) -->
+        <div class="floor floor--top">
+          <div class="room-cell" data-room="bathroom" tabindex="0" role="button" aria-label="Enter the Bathroom">
+            <div class="room-preview room-preview--bathroom">
+              <div class="room-wall bathroom-wall">
+                <!-- Bathroom furniture -->
+                <div class="bp-window">
+                  <div class="bp-window-frame"></div>
+                  <div class="bp-curtain left"></div>
+                  <div class="bp-curtain right"></div>
+                  <div class="bp-sky"></div>
+                </div>
+                <div class="bp-bathtub">
+                  <div class="bp-bathtub-body"></div>
+                  <div class="bp-bathtub-feet left"></div>
+                  <div class="bp-bathtub-feet right"></div>
+                  <div class="bp-bubbles">
+                    <div class="bp-bubble b1"></div>
+                    <div class="bp-bubble b2"></div>
+                    <div class="bp-bubble b3"></div>
+                    <div class="bp-bubble b4"></div>
+                    <div class="bp-bubble b5"></div>
+                  </div>
+                  <div class="bp-faucet"></div>
+                </div>
+                <div class="bp-mirror">
+                  <div class="bp-mirror-frame"></div>
+                  <div class="bp-mirror-shine"></div>
+                </div>
+                <div class="bp-shelf">
+                  <div class="bp-bottle b1"></div>
+                  <div class="bp-bottle b2"></div>
+                  <div class="bp-bottle b3"></div>
+                </div>
+                <div class="bp-rug"></div>
+                <div class="bp-towel-rack">
+                  <div class="bp-towel"></div>
+                </div>
+                <div class="bp-razor">
+                  <svg viewBox="0 0 30 60" class="bp-razor-svg">
+                    <rect x="12" y="0" width="6" height="35" rx="3" fill="#C0C0C0"/>
+                    <rect x="8" y="35" width="14" height="20" rx="2" fill="#FF69B4"/>
+                    <rect x="6" y="55" width="18" height="5" rx="1" fill="#87CEEB"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="room-label">Bathroom</div>
+            </div>
+          </div>
+
+          <div class="room-cell" data-room="beauty" tabindex="0" role="button" aria-label="Enter the Beauty Room">
+            <div class="room-preview room-preview--beauty">
+              <div class="room-wall beauty-wall">
+                <!-- Beauty room furniture -->
+                <div class="bt-vanity">
+                  <div class="bt-vanity-top"></div>
+                  <div class="bt-vanity-mirror">
+                    <div class="bt-mirror-lights">
+                      <div class="bt-light"></div>
+                      <div class="bt-light"></div>
+                      <div class="bt-light"></div>
+                      <div class="bt-light"></div>
+                      <div class="bt-light"></div>
+                    </div>
+                    <div class="bt-mirror-glass"></div>
+                  </div>
+                  <div class="bt-vanity-legs"></div>
+                </div>
+                <div class="bt-chair">
+                  <div class="bt-chair-seat"></div>
+                  <div class="bt-chair-back"></div>
+                  <div class="bt-chair-leg"></div>
+                </div>
+                <div class="bt-products">
+                  <div class="bt-product p1"></div>
+                  <div class="bt-product p2"></div>
+                  <div class="bt-product p3"></div>
+                </div>
+                <div class="bt-hair-tools">
+                  <div class="bt-dryer"></div>
+                  <div class="bt-brush"></div>
+                </div>
+                <div class="bt-poster"></div>
+                <div class="bt-plant">
+                  <div class="bt-pot"></div>
+                  <div class="bt-leaf l1"></div>
+                  <div class="bt-leaf l2"></div>
+                  <div class="bt-leaf l3"></div>
+                </div>
+                <div class="bt-rug"></div>
+              </div>
+              <div class="room-label">Beauty Room</div>
+            </div>
+          </div>
+
+          <div class="room-cell" data-room="studio" tabindex="0" role="button" aria-label="Enter the Studio">
+            <div class="room-preview room-preview--studio">
+              <div class="room-wall studio-wall">
+                <!-- Studio furniture -->
+                <div class="st-easel">
+                  <div class="st-easel-leg left"></div>
+                  <div class="st-easel-leg right"></div>
+                  <div class="st-canvas"></div>
+                  <div class="st-canvas-art">
+                    <div class="st-paint-splash s1"></div>
+                    <div class="st-paint-splash s2"></div>
+                    <div class="st-paint-splash s3"></div>
+                  </div>
+                </div>
+                <div class="st-desk">
+                  <div class="st-desk-top"></div>
+                  <div class="st-desk-drawers">
+                    <div class="st-drawer"></div>
+                    <div class="st-drawer"></div>
+                  </div>
+                </div>
+                <div class="st-lamp">
+                  <div class="st-lamp-shade"></div>
+                  <div class="st-lamp-arm"></div>
+                  <div class="st-lamp-base"></div>
+                  <div class="st-lamp-glow"></div>
+                </div>
+                <div class="st-sneaker">
+                  <svg viewBox="0 0 50 30" class="st-sneaker-svg">
+                    <path d="M5,25 Q5,15 15,12 L35,10 Q45,9 48,15 L48,22 Q48,25 45,25 Z" fill="#FF69B4" stroke="#E0559D" stroke-width="1"/>
+                    <path d="M15,12 Q20,8 30,8 L35,10" fill="none" stroke="#fff" stroke-width="1.5"/>
+                    <circle cx="42" cy="20" r="3" fill="#fff"/>
+                  </svg>
+                </div>
+                <div class="st-mood-board">
+                  <div class="st-pin p1"></div>
+                  <div class="st-pin p2"></div>
+                  <div class="st-pin p3"></div>
+                  <div class="st-photo ph1"></div>
+                  <div class="st-photo ph2"></div>
+                </div>
+                <div class="st-rug"></div>
+              </div>
+              <div class="room-label">Studio</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider between floors -->
+        <div class="floor-divider">
+          <div class="divider-trim"></div>
+        </div>
+
+        <!-- Floor 1 (Bottom) -->
+        <div class="floor floor--bottom">
+          <div class="room-cell" data-room="living" tabindex="0" role="button" aria-label="Enter the Living Room">
+            <div class="room-preview room-preview--living">
+              <div class="room-wall living-wall">
+                <!-- Living room furniture -->
+                <div class="lv-sofa">
+                  <div class="lv-sofa-back"></div>
+                  <div class="lv-sofa-seat"></div>
+                  <div class="lv-sofa-arm left"></div>
+                  <div class="lv-sofa-arm right"></div>
+                  <div class="lv-cushion c1"></div>
+                  <div class="lv-cushion c2"></div>
+                </div>
+                <div class="lv-coffee-table">
+                  <div class="lv-table-top"></div>
+                  <div class="lv-table-leg left"></div>
+                  <div class="lv-table-leg right"></div>
+                  <div class="lv-magazine"></div>
+                  <div class="lv-coffee-cup"></div>
+                </div>
+                <div class="lv-photo-wall">
+                  <div class="lv-frame f1"></div>
+                  <div class="lv-frame f2"></div>
+                  <div class="lv-frame f3"></div>
+                </div>
+                <div class="lv-floor-lamp">
+                  <div class="lv-flamp-shade"></div>
+                  <div class="lv-flamp-pole"></div>
+                  <div class="lv-flamp-base"></div>
+                </div>
+                <div class="lv-plant">
+                  <div class="lv-pot"></div>
+                  <div class="lv-leaf l1"></div>
+                  <div class="lv-leaf l2"></div>
+                  <div class="lv-leaf l3"></div>
+                  <div class="lv-leaf l4"></div>
+                </div>
+                <div class="lv-rug"></div>
+              </div>
+              <div class="room-label">Living Room</div>
+            </div>
+          </div>
+
+          <div class="room-cell" data-room="office" tabindex="0" role="button" aria-label="Enter the Office">
+            <div class="room-preview room-preview--office">
+              <div class="room-wall office-wall">
+                <!-- Office furniture -->
+                <div class="of-desk">
+                  <div class="of-desk-top"></div>
+                  <div class="of-desk-legs">
+                    <div class="of-leg left"></div>
+                    <div class="of-leg right"></div>
+                  </div>
+                </div>
+                <div class="of-monitor">
+                  <div class="of-screen"></div>
+                  <div class="of-screen-content">
+                    <div class="of-code-line cl1"></div>
+                    <div class="of-code-line cl2"></div>
+                    <div class="of-code-line cl3"></div>
+                  </div>
+                  <div class="of-stand"></div>
+                </div>
+                <div class="of-chair">
+                  <div class="of-chair-back"></div>
+                  <div class="of-chair-seat"></div>
+                  <div class="of-chair-pole"></div>
+                  <div class="of-chair-wheels"></div>
+                </div>
+                <div class="of-bookshelf">
+                  <div class="of-shelf-unit">
+                    <div class="of-book b1"></div>
+                    <div class="of-book b2"></div>
+                    <div class="of-book b3"></div>
+                  </div>
+                  <div class="of-shelf-unit">
+                    <div class="of-book b4"></div>
+                    <div class="of-book b5"></div>
+                  </div>
+                </div>
+                <div class="of-milk-carton">
+                  <svg viewBox="0 0 24 40" class="of-milk-svg">
+                    <rect x="2" y="8" width="20" height="30" rx="2" fill="#F5F5DC"/>
+                    <polygon points="2,8 12,0 22,8" fill="#87CEEB"/>
+                    <rect x="6" y="14" width="12" height="8" rx="1" fill="#87CEEB" opacity="0.3"/>
+                    <text x="12" y="20" text-anchor="middle" font-size="4" fill="#333" font-weight="bold">OAT</text>
+                  </svg>
+                </div>
+                <div class="of-rug"></div>
+                <div class="of-cactus">
+                  <div class="of-cactus-pot"></div>
+                  <div class="of-cactus-body"></div>
+                  <div class="of-cactus-arm"></div>
+                </div>
+              </div>
+              <div class="room-label">Office</div>
+            </div>
+          </div>
+
+          <div class="room-cell" data-room="lounge" tabindex="0" role="button" aria-label="Enter the Lounge">
+            <div class="room-preview room-preview--lounge">
+              <div class="room-wall lounge-wall">
+                <!-- Lounge furniture -->
+                <div class="lg-record-player">
+                  <div class="lg-player-body"></div>
+                  <div class="lg-vinyl">
+                    <div class="lg-vinyl-grooves"></div>
+                    <div class="lg-vinyl-label"></div>
+                  </div>
+                  <div class="lg-tonearm"></div>
+                </div>
+                <div class="lg-speaker left">
+                  <div class="lg-speaker-body"></div>
+                  <div class="lg-speaker-cone"></div>
+                  <div class="lg-speaker-cone small"></div>
+                </div>
+                <div class="lg-speaker right">
+                  <div class="lg-speaker-body"></div>
+                  <div class="lg-speaker-cone"></div>
+                  <div class="lg-speaker-cone small"></div>
+                </div>
+                <div class="lg-neon-sign">
+                  <span>vibes</span>
+                </div>
+                <div class="lg-bean-bag"></div>
+                <div class="lg-lava-lamp">
+                  <div class="lg-lava-base"></div>
+                  <div class="lg-lava-glass"></div>
+                  <div class="lg-lava-blob b1"></div>
+                  <div class="lg-lava-blob b2"></div>
+                  <div class="lg-lava-blob b3"></div>
+                </div>
+                <div class="lg-disco-ball">
+                  <div class="lg-disco-string"></div>
+                  <div class="lg-disco-sphere"></div>
+                </div>
+                <div class="lg-rug"></div>
+              </div>
+              <div class="room-label">Lounge</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- House base / ground -->
+      <div class="house-base">
+        <div class="base-door">
+          <div class="door-frame"></div>
+          <div class="door-knob"></div>
+        </div>
+        <div class="base-steps">
+          <div class="step s1"></div>
+          <div class="step s2"></div>
+          <div class="step s3"></div>
+        </div>
+      </div>
+
+      <!-- Ground decorations -->
+      <div class="ground">
+        <div class="bush b1"></div>
+        <div class="bush b2"></div>
+        <div class="flower f1">
+          <div class="flower-stem"></div>
+          <div class="flower-head"></div>
+        </div>
+        <div class="flower f2">
+          <div class="flower-stem"></div>
+          <div class="flower-head"></div>
+        </div>
+        <div class="flower f3">
+          <div class="flower-stem"></div>
+          <div class="flower-head"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ROOM VIEWS ==================== -->
+  <!-- Bathroom Room -->
+  <section class="view view--room" id="roomView-bathroom">
+    <button class="back-btn" data-back="house" aria-label="Back to house">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to house</span>
+    </button>
+    <div class="room-full room-full--bathroom">
+      <div class="room-bg bathroom-bg">
+        <!-- Bathroom wall pattern -->
+        <div class="wall-pattern tile-pattern"></div>
+
+        <!-- Window with city view -->
+        <div class="room-window">
+          <div class="window-frame">
+            <div class="window-pane left">
+              <div class="window-sky">
+                <div class="window-building wb1"></div>
+                <div class="window-building wb2"></div>
+                <div class="window-building wb3"></div>
+              </div>
+            </div>
+            <div class="window-pane right">
+              <div class="window-sky">
+                <div class="window-building wb4"></div>
+                <div class="window-building wb5"></div>
+              </div>
+            </div>
+          </div>
+          <div class="curtain curtain-left"></div>
+          <div class="curtain curtain-right"></div>
+        </div>
+
+        <!-- Bathtub - main interactive object → Gillette -->
+        <div class="room-object" data-project="gillette" tabindex="0" role="button" aria-label="View Gillette Campaign">
+          <div class="bathtub">
+            <div class="bathtub-body">
+              <div class="bathtub-water">
+                <div class="water-shine"></div>
+              </div>
+              <div class="bathtub-bubbles">
+                <div class="bubble bub1"></div>
+                <div class="bubble bub2"></div>
+                <div class="bubble bub3"></div>
+                <div class="bubble bub4"></div>
+                <div class="bubble bub5"></div>
+                <div class="bubble bub6"></div>
+                <div class="bubble bub7"></div>
+                <div class="bubble bub8"></div>
+              </div>
+            </div>
+            <div class="bathtub-feet">
+              <div class="foot left"></div>
+              <div class="foot right"></div>
+            </div>
+            <div class="bathtub-faucet">
+              <div class="faucet-body"></div>
+              <div class="faucet-handle"></div>
+              <div class="water-drip"></div>
+            </div>
+          </div>
+          <div class="object-label">
+            <span class="label-icon">&#10022;</span> Gillette Campaign
+          </div>
+        </div>
+
+        <!-- Vanity mirror with shelf -->
+        <div class="bath-vanity">
+          <div class="vanity-mirror">
+            <div class="mirror-glass"></div>
+            <div class="mirror-shine"></div>
+          </div>
+          <div class="vanity-shelf">
+            <div class="shelf-bottle sb1"></div>
+            <div class="shelf-bottle sb2"></div>
+            <div class="shelf-bottle sb3"></div>
+            <div class="shelf-soap"></div>
+          </div>
+        </div>
+
+        <!-- Towel rack -->
+        <div class="towel-rack">
+          <div class="rack-bar"></div>
+          <div class="towel towel-pink"></div>
+          <div class="towel towel-blue"></div>
+        </div>
+
+        <!-- Razor on shelf - secondary interactive -->
+        <div class="razor-display room-object-secondary" data-project="gillette" tabindex="0">
+          <svg viewBox="0 0 40 80" class="razor-svg-large">
+            <rect x="15" y="0" width="10" height="45" rx="5" fill="linear-gradient(#D4D4D4, #A0A0A0)" stroke="#888" stroke-width="0.5"/>
+            <rect x="15" y="0" width="10" height="45" rx="5" fill="#C0C0C0"/>
+            <rect x="10" y="45" width="20" height="28" rx="3" fill="#FF69B4"/>
+            <rect x="10" y="45" width="20" height="28" rx="3" fill="url(#razorGrad)" opacity="0.5"/>
+            <rect x="7" y="73" width="26" height="7" rx="2" fill="#87CEEB"/>
+            <line x1="9" y1="75" x2="31" y2="75" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+            <line x1="9" y1="77" x2="31" y2="77" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+          </svg>
+          <div class="razor-sparkle">&#10022;</div>
+        </div>
+
+        <!-- Bath mat -->
+        <div class="bath-mat"></div>
+
+        <!-- Floor -->
+        <div class="room-floor bathroom-floor"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beauty Room -->
+  <section class="view view--room" id="roomView-beauty">
+    <button class="back-btn" data-back="house" aria-label="Back to house">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to house</span>
+    </button>
+    <div class="room-full room-full--beauty">
+      <div class="room-bg beauty-bg">
+        <div class="wall-pattern polka-pattern"></div>
+
+        <!-- Hollywood Vanity Mirror - main object → Kérastase -->
+        <div class="room-object" data-project="kerastase" tabindex="0" role="button" aria-label="View Kérastase Campaign">
+          <div class="hollywood-vanity">
+            <div class="hv-mirror">
+              <div class="hv-mirror-glass"></div>
+              <div class="hv-mirror-reflection"></div>
+              <div class="hv-lights">
+                <div class="hv-bulb"></div>
+                <div class="hv-bulb"></div>
+                <div class="hv-bulb"></div>
+                <div class="hv-bulb"></div>
+                <div class="hv-bulb"></div>
+                <div class="hv-bulb"></div>
+                <div class="hv-bulb"></div>
+                <div class="hv-bulb"></div>
+                <div class="hv-bulb"></div>
+                <div class="hv-bulb"></div>
+              </div>
+            </div>
+            <div class="hv-table">
+              <div class="hv-table-top"></div>
+              <div class="hv-table-skirt"></div>
+              <div class="hv-products">
+                <div class="hv-prod hp1"></div>
+                <div class="hv-prod hp2"></div>
+                <div class="hv-prod hp3"></div>
+                <div class="hv-prod hp4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="object-label">
+            <span class="label-icon">&#10022;</span> Kérastase Campaign
+          </div>
+        </div>
+
+        <!-- Velvet stool -->
+        <div class="beauty-stool">
+          <div class="stool-seat"></div>
+          <div class="stool-legs">
+            <div class="stool-leg sl1"></div>
+            <div class="stool-leg sl2"></div>
+          </div>
+        </div>
+
+        <!-- Clothing rack -->
+        <div class="clothing-rack">
+          <div class="rack-pole"></div>
+          <div class="rack-base-l"></div>
+          <div class="rack-base-r"></div>
+          <div class="hanger h1">
+            <div class="dress d1"></div>
+          </div>
+          <div class="hanger h2">
+            <div class="dress d2"></div>
+          </div>
+          <div class="hanger h3">
+            <div class="dress d3"></div>
+          </div>
+        </div>
+
+        <!-- Hair dryer on hook -->
+        <div class="wall-dryer">
+          <svg viewBox="0 0 50 40" class="dryer-svg">
+            <ellipse cx="18" cy="20" rx="15" ry="12" fill="#FF69B4"/>
+            <rect x="30" y="15" width="18" height="10" rx="3" fill="#FF69B4"/>
+            <ellipse cx="18" cy="20" rx="8" ry="6" fill="#FFB6C1" opacity="0.5"/>
+            <circle cx="18" cy="20" r="3" fill="#E0559D"/>
+          </svg>
+        </div>
+
+        <!-- Fluffy rug -->
+        <div class="beauty-rug"></div>
+
+        <div class="room-floor beauty-floor"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Studio Room -->
+  <section class="view view--room" id="roomView-studio">
+    <button class="back-btn" data-back="house" aria-label="Back to house">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to house</span>
+    </button>
+    <div class="room-full room-full--studio">
+      <div class="room-bg studio-bg">
+        <div class="wall-pattern stripe-pattern"></div>
+
+        <!-- Easel with canvas - main object → Nike -->
+        <div class="room-object" data-project="nike" tabindex="0" role="button" aria-label="View Nike Campaign">
+          <div class="big-easel">
+            <div class="easel-frame">
+              <div class="easel-leg el1"></div>
+              <div class="easel-leg el2"></div>
+              <div class="easel-back"></div>
+            </div>
+            <div class="easel-canvas">
+              <div class="canvas-swoosh">
+                <svg viewBox="0 0 100 40" class="swoosh-svg">
+                  <path d="M10,30 Q30,35 50,20 Q70,5 95,8" stroke="#FF69B4" stroke-width="4" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="canvas-splatter s1"></div>
+              <div class="canvas-splatter s2"></div>
+              <div class="canvas-splatter s3"></div>
+            </div>
+            <div class="easel-tray">
+              <div class="paint-tube t1"></div>
+              <div class="paint-tube t2"></div>
+              <div class="paint-tube t3"></div>
+            </div>
+          </div>
+          <div class="object-label">
+            <span class="label-icon">&#10022;</span> Nike Campaign
+          </div>
+        </div>
+
+        <!-- Work desk -->
+        <div class="studio-desk">
+          <div class="sdesk-top"></div>
+          <div class="sdesk-drawer"></div>
+          <div class="sdesk-legs">
+            <div class="sdesk-leg"></div>
+            <div class="sdesk-leg"></div>
+          </div>
+          <div class="sdesk-items">
+            <div class="pencil-cup">
+              <div class="cup-body"></div>
+              <div class="pencil pc1"></div>
+              <div class="pencil pc2"></div>
+              <div class="pencil pc3"></div>
+            </div>
+            <div class="sketchbook"></div>
+          </div>
+        </div>
+
+        <!-- Mood board on wall -->
+        <div class="mood-board">
+          <div class="board-frame"></div>
+          <div class="board-pin bp1"></div>
+          <div class="board-pin bp2"></div>
+          <div class="board-pin bp3"></div>
+          <div class="board-pin bp4"></div>
+          <div class="board-card bc1"></div>
+          <div class="board-card bc2"></div>
+          <div class="board-card bc3"></div>
+          <div class="board-card bc4"></div>
+          <div class="board-string bs1"></div>
+          <div class="board-string bs2"></div>
+        </div>
+
+        <!-- Desk lamp -->
+        <div class="studio-lamp">
+          <div class="slamp-shade"></div>
+          <div class="slamp-arm"></div>
+          <div class="slamp-base"></div>
+          <div class="slamp-glow"></div>
+        </div>
+
+        <div class="studio-rug"></div>
+        <div class="room-floor studio-floor"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Living Room -->
+  <section class="view view--room" id="roomView-living">
+    <button class="back-btn" data-back="house" aria-label="Back to house">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to house</span>
+    </button>
+    <div class="room-full room-full--living">
+      <div class="room-bg living-bg">
+        <div class="wall-pattern stripe-pattern-warm"></div>
+
+        <!-- Photo wall - main object → About Us -->
+        <div class="room-object" data-project="about" tabindex="0" role="button" aria-label="View About Us">
+          <div class="gallery-wall">
+            <div class="gw-frame gf1">
+              <div class="gw-photo"></div>
+              <div class="gw-label">Naomi</div>
+            </div>
+            <div class="gw-frame gf2">
+              <div class="gw-photo"></div>
+              <div class="gw-label">Jana</div>
+            </div>
+            <div class="gw-frame gf3">
+              <div class="gw-photo"></div>
+              <div class="gw-label">Together</div>
+            </div>
+          </div>
+          <div class="object-label">
+            <span class="label-icon">&#10022;</span> About Us
+          </div>
+        </div>
+
+        <!-- Big pink sofa -->
+        <div class="big-sofa">
+          <div class="sofa-back"></div>
+          <div class="sofa-seat"></div>
+          <div class="sofa-arm-l"></div>
+          <div class="sofa-arm-r"></div>
+          <div class="sofa-cushion sc1"></div>
+          <div class="sofa-cushion sc2"></div>
+          <div class="sofa-cushion sc3"></div>
+          <div class="sofa-legs">
+            <div class="sofa-leg"></div>
+            <div class="sofa-leg"></div>
+            <div class="sofa-leg"></div>
+            <div class="sofa-leg"></div>
+          </div>
+        </div>
+
+        <!-- Coffee table -->
+        <div class="big-coffee-table">
+          <div class="bct-top"></div>
+          <div class="bct-legs">
+            <div class="bct-leg"></div>
+            <div class="bct-leg"></div>
+          </div>
+          <div class="bct-items">
+            <div class="bct-book"></div>
+            <div class="bct-candle">
+              <div class="candle-body"></div>
+              <div class="candle-flame"></div>
+            </div>
+            <div class="bct-cup"></div>
+          </div>
+        </div>
+
+        <!-- Floor lamp -->
+        <div class="living-lamp">
+          <div class="llamp-shade"></div>
+          <div class="llamp-pole"></div>
+          <div class="llamp-base"></div>
+        </div>
+
+        <!-- Monstera plant -->
+        <div class="monstera">
+          <div class="monstera-pot"></div>
+          <div class="monstera-leaf ml1"></div>
+          <div class="monstera-leaf ml2"></div>
+          <div class="monstera-leaf ml3"></div>
+          <div class="monstera-leaf ml4"></div>
+          <div class="monstera-leaf ml5"></div>
+        </div>
+
+        <div class="living-rug"></div>
+        <div class="room-floor living-floor"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Office Room -->
+  <section class="view view--room" id="roomView-office">
+    <button class="back-btn" data-back="house" aria-label="Back to house">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to house</span>
+    </button>
+    <div class="room-full room-full--office">
+      <div class="room-bg office-bg">
+        <div class="wall-pattern grid-pattern"></div>
+
+        <!-- Computer desk - main object → Oatly -->
+        <div class="room-object" data-project="oatly" tabindex="0" role="button" aria-label="View Oatly Campaign">
+          <div class="office-setup">
+            <div class="monitor">
+              <div class="monitor-bezel">
+                <div class="monitor-screen">
+                  <div class="screen-content">
+                    <div class="screen-toolbar"></div>
+                    <div class="screen-window">
+                      <div class="sw-title"></div>
+                      <div class="sw-text sl1"></div>
+                      <div class="sw-text sl2"></div>
+                      <div class="sw-text sl3"></div>
+                      <div class="sw-image"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="monitor-stand"></div>
+              <div class="monitor-base"></div>
+            </div>
+            <div class="keyboard">
+              <div class="key-row kr1"></div>
+              <div class="key-row kr2"></div>
+              <div class="key-row kr3"></div>
+            </div>
+          </div>
+          <div class="object-label">
+            <span class="label-icon">&#10022;</span> Oatly Campaign
+          </div>
+        </div>
+
+        <!-- Office desk -->
+        <div class="office-desk-full">
+          <div class="odf-top"></div>
+          <div class="odf-drawers">
+            <div class="odf-drawer"></div>
+            <div class="odf-drawer"></div>
+            <div class="odf-drawer"></div>
+          </div>
+          <div class="odf-leg"></div>
+        </div>
+
+        <!-- Office chair -->
+        <div class="office-chair-full">
+          <div class="ocf-back"></div>
+          <div class="ocf-seat"></div>
+          <div class="ocf-pole"></div>
+          <div class="ocf-base">
+            <div class="ocf-wheel w1"></div>
+            <div class="ocf-wheel w2"></div>
+            <div class="ocf-wheel w3"></div>
+          </div>
+        </div>
+
+        <!-- Bookshelf -->
+        <div class="office-bookshelf">
+          <div class="obs-frame"></div>
+          <div class="obs-shelf os1">
+            <div class="obs-book ob1"></div>
+            <div class="obs-book ob2"></div>
+            <div class="obs-book ob3"></div>
+            <div class="obs-book ob4"></div>
+          </div>
+          <div class="obs-shelf os2">
+            <div class="obs-book ob5"></div>
+            <div class="obs-book ob6"></div>
+            <div class="obs-plant"></div>
+          </div>
+          <div class="obs-shelf os3">
+            <div class="obs-book ob7"></div>
+            <div class="obs-book ob8"></div>
+            <div class="obs-book ob9"></div>
+          </div>
+        </div>
+
+        <!-- Oat milk on desk -->
+        <div class="oat-milk-display">
+          <svg viewBox="0 0 30 50" class="oat-milk-svg-big">
+            <rect x="3" y="10" width="24" height="38" rx="3" fill="#F5F5DC" stroke="#E0D5B0" stroke-width="0.5"/>
+            <polygon points="3,10 15,1 27,10" fill="#87CEEB"/>
+            <rect x="7" y="18" width="16" height="12" rx="2" fill="#87CEEB" opacity="0.3"/>
+            <text x="15" y="26" text-anchor="middle" font-size="5" fill="#555" font-weight="bold">OAT</text>
+            <text x="15" y="32" text-anchor="middle" font-size="3" fill="#888">MILK</text>
+          </svg>
+        </div>
+
+        <div class="office-rug"></div>
+        <div class="room-floor office-floor"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lounge Room -->
+  <section class="view view--room" id="roomView-lounge">
+    <button class="back-btn" data-back="house" aria-label="Back to house">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to house</span>
+    </button>
+    <div class="room-full room-full--lounge">
+      <div class="room-bg lounge-bg">
+        <div class="wall-pattern diamond-pattern"></div>
+
+        <!-- Record player - main object → Spotify -->
+        <div class="room-object" data-project="spotify" tabindex="0" role="button" aria-label="View Spotify Campaign">
+          <div class="big-record-player">
+            <div class="brp-body">
+              <div class="brp-lid"></div>
+              <div class="brp-platter">
+                <div class="brp-vinyl">
+                  <div class="vinyl-groove vg1"></div>
+                  <div class="vinyl-groove vg2"></div>
+                  <div class="vinyl-groove vg3"></div>
+                  <div class="vinyl-label"></div>
+                </div>
+              </div>
+              <div class="brp-tonearm">
+                <div class="tonearm-base"></div>
+                <div class="tonearm-arm"></div>
+                <div class="tonearm-head"></div>
+              </div>
+            </div>
+            <div class="brp-stand">
+              <div class="brp-stand-shelf"></div>
+              <div class="brp-records">
+                <div class="brp-record r1"></div>
+                <div class="brp-record r2"></div>
+                <div class="brp-record r3"></div>
+                <div class="brp-record r4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="object-label">
+            <span class="label-icon">&#10022;</span> Spotify Campaign
+          </div>
+        </div>
+
+        <!-- Speakers -->
+        <div class="big-speakers">
+          <div class="bspeaker bsp-l">
+            <div class="bsp-body"></div>
+            <div class="bsp-woofer"></div>
+            <div class="bsp-tweeter"></div>
+          </div>
+          <div class="bspeaker bsp-r">
+            <div class="bsp-body"></div>
+            <div class="bsp-woofer"></div>
+            <div class="bsp-tweeter"></div>
+          </div>
+        </div>
+
+        <!-- Neon sign -->
+        <div class="big-neon">
+          <span class="neon-text">good vibes only</span>
+        </div>
+
+        <!-- Bean bag -->
+        <div class="big-bean-bag">
+          <div class="bean-body"></div>
+          <div class="bean-shadow"></div>
+        </div>
+
+        <!-- Lava lamp -->
+        <div class="big-lava-lamp">
+          <div class="blava-cap"></div>
+          <div class="blava-glass">
+            <div class="blava-blob blb1"></div>
+            <div class="blava-blob blb2"></div>
+            <div class="blava-blob blb3"></div>
+          </div>
+          <div class="blava-base"></div>
+        </div>
+
+        <!-- Disco ball -->
+        <div class="big-disco">
+          <div class="disco-string"></div>
+          <div class="disco-ball">
+            <div class="disco-facet df1"></div>
+            <div class="disco-facet df2"></div>
+            <div class="disco-facet df3"></div>
+            <div class="disco-facet df4"></div>
+            <div class="disco-highlight"></div>
+          </div>
+          <div class="disco-rays">
+            <div class="disco-ray dr1"></div>
+            <div class="disco-ray dr2"></div>
+            <div class="disco-ray dr3"></div>
+            <div class="disco-ray dr4"></div>
+          </div>
+        </div>
+
+        <div class="lounge-rug"></div>
+        <div class="room-floor lounge-floor"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECT VIEWS ==================== -->
+  <!-- Gillette Project -->
+  <section class="view view--project" id="projectView-gillette">
+    <button class="back-btn" data-back="bathroom" aria-label="Back to bathroom">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to bathroom</span>
+    </button>
+    <div class="project-page">
+      <div class="project-hero project-hero--gillette">
+        <div class="project-hero-pattern"></div>
+        <div class="project-hero-content">
+          <span class="project-tag">Campaign</span>
+          <h2 class="project-title">Gillette</h2>
+          <p class="project-tagline">The Best a Woman Can Get</p>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-info">
+          <div class="project-meta">
+            <div class="meta-item">
+              <span class="meta-label">Role</span>
+              <span class="meta-value">Art Direction & Copy</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Type</span>
+              <span class="meta-value">Integrated Campaign</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Year</span>
+              <span class="meta-value">2025</span>
+            </div>
+          </div>
+          <div class="project-description">
+            <p>A campaign reimagining Gillette's iconic tagline for the modern woman. We flipped the script on traditional razor advertising — no more blue razors and clinical bathrooms. Instead: pink bubbles, bold confidence, and the unapologetic joy of self-care.</p>
+            <p>The campaign spans print, social, and digital, with a bathroom scene that turns an everyday ritual into a moment of empowerment.</p>
+          </div>
+        </div>
+        <div class="project-gallery">
+          <div class="gallery-item gi-large">
+            <div class="gallery-placeholder gp-gillette-1">
+              <div class="gp-content">
+                <svg viewBox="0 0 200 150" class="gp-illustration">
+                  <rect x="0" y="0" width="200" height="150" fill="#FFE4EC"/>
+                  <rect x="20" y="100" width="160" height="40" rx="20" fill="#FFB6C1" opacity="0.6"/>
+                  <ellipse cx="100" cy="80" rx="60" ry="15" fill="#fff" opacity="0.4"/>
+                  <circle cx="60" cy="70" r="8" fill="#fff" opacity="0.6"/>
+                  <circle cx="90" cy="65" r="12" fill="#fff" opacity="0.5"/>
+                  <circle cx="120" cy="72" r="6" fill="#fff" opacity="0.7"/>
+                  <circle cx="140" cy="68" r="10" fill="#fff" opacity="0.4"/>
+                  <rect x="85" y="20" width="8" height="40" rx="4" fill="#C0C0C0"/>
+                  <rect x="80" y="55" width="18" height="12" rx="2" fill="#FF69B4"/>
+                  <text x="100" y="145" text-anchor="middle" font-size="8" fill="#E0559D" font-family="sans-serif">Hero Visual Placement</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gi-small">
+            <div class="gallery-placeholder gp-gillette-2">
+              <div class="gp-content">
+                <div class="gp-text-block">
+                  <span class="gp-headline">Print Ad</span>
+                  <span class="gp-sub">Social carousel concept</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gi-small">
+            <div class="gallery-placeholder gp-gillette-3">
+              <div class="gp-content">
+                <div class="gp-text-block">
+                  <span class="gp-headline">Digital</span>
+                  <span class="gp-sub">Interactive banner suite</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kérastase Project -->
+  <section class="view view--project" id="projectView-kerastase">
+    <button class="back-btn" data-back="beauty" aria-label="Back to beauty room">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to beauty room</span>
+    </button>
+    <div class="project-page">
+      <div class="project-hero project-hero--kerastase">
+        <div class="project-hero-pattern"></div>
+        <div class="project-hero-content">
+          <span class="project-tag">Campaign</span>
+          <h2 class="project-title">Kérastase</h2>
+          <p class="project-tagline">Hair Worth Obsessing Over</p>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-info">
+          <div class="project-meta">
+            <div class="meta-item">
+              <span class="meta-label">Role</span>
+              <span class="meta-value">Art Direction & Copy</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Type</span>
+              <span class="meta-value">Beauty Campaign</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Year</span>
+              <span class="meta-value">2025</span>
+            </div>
+          </div>
+          <div class="project-description">
+            <p>A luxury haircare campaign for Kérastase that brings salon-level glamour into the everyday beauty routine. Think Hollywood vanity meets modern self-expression.</p>
+            <p>We built a visual world where every strand tells a story — from the golden shimmer of the product bottles to the confidence of the women who use them.</p>
+          </div>
+        </div>
+        <div class="project-gallery">
+          <div class="gallery-item gi-large">
+            <div class="gallery-placeholder gp-kerastase-1">
+              <div class="gp-content">
+                <svg viewBox="0 0 200 150" class="gp-illustration">
+                  <rect x="0" y="0" width="200" height="150" fill="#FFF0F5"/>
+                  <rect x="60" y="20" width="80" height="100" rx="5" fill="#FFD700" opacity="0.3"/>
+                  <rect x="70" y="30" width="60" height="80" rx="3" fill="#FFD700" opacity="0.2"/>
+                  <rect x="85" y="40" width="30" height="50" rx="10" fill="#FFD700" opacity="0.4"/>
+                  <text x="100" y="140" text-anchor="middle" font-size="8" fill="#C7956D" font-family="sans-serif">Hero Visual Placement</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gi-small">
+            <div class="gallery-placeholder gp-kerastase-2">
+              <div class="gp-content">
+                <div class="gp-text-block">
+                  <span class="gp-headline">Product Shoot</span>
+                  <span class="gp-sub">Luxury bottle lineup</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gi-small">
+            <div class="gallery-placeholder gp-kerastase-3">
+              <div class="gp-content">
+                <div class="gp-text-block">
+                  <span class="gp-headline">Social</span>
+                  <span class="gp-sub">Instagram story series</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nike Project -->
+  <section class="view view--project" id="projectView-nike">
+    <button class="back-btn" data-back="studio" aria-label="Back to studio">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to studio</span>
+    </button>
+    <div class="project-page">
+      <div class="project-hero project-hero--nike">
+        <div class="project-hero-pattern"></div>
+        <div class="project-hero-content">
+          <span class="project-tag">Campaign</span>
+          <h2 class="project-title">Nike</h2>
+          <p class="project-tagline">Move Like You Mean It</p>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-info">
+          <div class="project-meta">
+            <div class="meta-item">
+              <span class="meta-label">Role</span>
+              <span class="meta-value">Art Direction & Copy</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Type</span>
+              <span class="meta-value">Brand Campaign</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Year</span>
+              <span class="meta-value">2025</span>
+            </div>
+          </div>
+          <div class="project-description">
+            <p>A campaign for Nike Women that celebrates movement as self-expression. We painted sneakers in the colors of confidence and styled every shot like a canvas come to life.</p>
+            <p>The creative studio became the set — splashes of paint, bold typography, and athletes-as-artists defined the visual language.</p>
+          </div>
+        </div>
+        <div class="project-gallery">
+          <div class="gallery-item gi-large">
+            <div class="gallery-placeholder gp-nike-1">
+              <div class="gp-content">
+                <svg viewBox="0 0 200 150" class="gp-illustration">
+                  <rect x="0" y="0" width="200" height="150" fill="#E8E0F0"/>
+                  <path d="M30,100 Q60,110 100,80 Q140,50 180,60" stroke="#FF69B4" stroke-width="6" fill="none" stroke-linecap="round"/>
+                  <circle cx="50" cy="70" r="20" fill="#FF69B4" opacity="0.2"/>
+                  <circle cx="150" cy="90" r="15" fill="#87CEEB" opacity="0.2"/>
+                  <circle cx="100" cy="50" r="25" fill="#E6E6FA" opacity="0.3"/>
+                  <text x="100" y="140" text-anchor="middle" font-size="8" fill="#8B7DA8" font-family="sans-serif">Hero Visual Placement</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gi-small">
+            <div class="gallery-placeholder gp-nike-2">
+              <div class="gp-content">
+                <div class="gp-text-block">
+                  <span class="gp-headline">OOH</span>
+                  <span class="gp-sub">Billboard concept</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gi-small">
+            <div class="gallery-placeholder gp-nike-3">
+              <div class="gp-content">
+                <div class="gp-text-block">
+                  <span class="gp-headline">Film</span>
+                  <span class="gp-sub">30-second spot storyboard</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Project -->
+  <section class="view view--project" id="projectView-about">
+    <button class="back-btn" data-back="living" aria-label="Back to living room">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to living room</span>
+    </button>
+    <div class="project-page project-page--about">
+      <div class="project-hero project-hero--about">
+        <div class="project-hero-pattern"></div>
+        <div class="project-hero-content">
+          <span class="project-tag">Hello!</span>
+          <h2 class="project-title">About Us</h2>
+          <p class="project-tagline">The duo behind Dreamhouse</p>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-avatar about-avatar--naomi">
+              <div class="avatar-silhouette">
+                <svg viewBox="0 0 100 100" class="avatar-svg">
+                  <circle cx="50" cy="35" r="20" fill="#FFB6C1"/>
+                  <ellipse cx="50" cy="80" rx="30" ry="20" fill="#FF69B4"/>
+                  <circle cx="43" cy="32" r="2" fill="#333"/>
+                  <circle cx="57" cy="32" r="2" fill="#333"/>
+                  <path d="M45,40 Q50,45 55,40" stroke="#E0559D" stroke-width="1.5" fill="none"/>
+                  <path d="M30,20 Q35,5 50,10 Q65,5 70,20 Q72,30 65,35" fill="#4A3728" stroke="none"/>
+                  <path d="M35,35 Q30,50 25,70" stroke="#4A3728" stroke-width="8" fill="none" stroke-linecap="round"/>
+                  <path d="M65,35 Q70,50 75,70" stroke="#4A3728" stroke-width="8" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="about-name">Naomi</h3>
+            <p class="about-role">Art Director</p>
+            <p class="about-bio">Sees the world in mood boards and color palettes. Turns concepts into visuals that make you feel something. Currently obsessed with Y2K aesthetics and experimental typography.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-avatar about-avatar--jana">
+              <div class="avatar-silhouette">
+                <svg viewBox="0 0 100 100" class="avatar-svg">
+                  <circle cx="50" cy="35" r="20" fill="#FFB6C1"/>
+                  <ellipse cx="50" cy="80" rx="30" ry="20" fill="#87CEEB"/>
+                  <circle cx="43" cy="32" r="2" fill="#333"/>
+                  <circle cx="57" cy="32" r="2" fill="#333"/>
+                  <path d="M45,40 Q50,45 55,40" stroke="#E0559D" stroke-width="1.5" fill="none"/>
+                  <path d="M25,15 Q40,5 50,8 Q60,5 75,15 Q78,25 70,30" fill="#F5DEB3" stroke="none"/>
+                  <path d="M30,30 Q25,45 28,65" stroke="#F5DEB3" stroke-width="10" fill="none" stroke-linecap="round"/>
+                  <path d="M70,30 Q75,45 72,65" stroke="#F5DEB3" stroke-width="10" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="about-name">Jana</h3>
+            <p class="about-role">Copywriter</p>
+            <p class="about-bio">Finds the perfect words for imperfect moments. Believes every brand has a story worth telling — and that story should sound like a conversation, not a press release.</p>
+          </div>
+        </div>
+        <div class="about-together">
+          <h3 class="together-title">Together</h3>
+          <p class="together-text">We're two advertising students who believe the best work happens when art and words collide. This dreamhouse is our playground — a space where campaigns live inside rooms, and every corner tells a story.</p>
+          <p class="together-text">We're looking for internships where we can bring this energy to real brands. If you like what you see, let's talk.</p>
+          <div class="together-contact">
+            <a href="mailto:hello@dreamhouse.studio" class="contact-link">hello@dreamhouse.studio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Oatly Project -->
+  <section class="view view--project" id="projectView-oatly">
+    <button class="back-btn" data-back="office" aria-label="Back to office">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to office</span>
+    </button>
+    <div class="project-page">
+      <div class="project-hero project-hero--oatly">
+        <div class="project-hero-pattern"></div>
+        <div class="project-hero-content">
+          <span class="project-tag">Campaign</span>
+          <h2 class="project-title">Oatly</h2>
+          <p class="project-tagline">It's Like Milk But For Humans</p>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-info">
+          <div class="project-meta">
+            <div class="meta-item">
+              <span class="meta-label">Role</span>
+              <span class="meta-value">Art Direction & Copy</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Type</span>
+              <span class="meta-value">Brand Campaign</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Year</span>
+              <span class="meta-value">2025</span>
+            </div>
+          </div>
+          <div class="project-description">
+            <p>A tongue-in-cheek campaign for Oatly that leans into their unapologetically weird brand voice. We created an office takeover concept — oat milk showing up where you'd least expect it.</p>
+            <p>The campaign lives at the intersection of corporate satire and genuine sustainability advocacy. Funny on the surface, meaningful underneath.</p>
+          </div>
+        </div>
+        <div class="project-gallery">
+          <div class="gallery-item gi-large">
+            <div class="gallery-placeholder gp-oatly-1">
+              <div class="gp-content">
+                <svg viewBox="0 0 200 150" class="gp-illustration">
+                  <rect x="0" y="0" width="200" height="150" fill="#F0FFF0"/>
+                  <rect x="70" y="20" width="60" height="100" rx="8" fill="#F5F5DC" stroke="#D4C5A0" stroke-width="1"/>
+                  <polygon points="70,20 100,5 130,20" fill="#87CEEB"/>
+                  <rect x="80" y="45" width="40" height="25" rx="3" fill="#87CEEB" opacity="0.3"/>
+                  <text x="100" y="60" text-anchor="middle" font-size="10" fill="#555" font-weight="bold" font-family="sans-serif">OAT</text>
+                  <text x="100" y="140" text-anchor="middle" font-size="8" fill="#6B8E6B" font-family="sans-serif">Hero Visual Placement</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gi-small">
+            <div class="gallery-placeholder gp-oatly-2">
+              <div class="gp-content">
+                <div class="gp-text-block">
+                  <span class="gp-headline">Guerrilla</span>
+                  <span class="gp-sub">Office takeover stunt</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gi-small">
+            <div class="gallery-placeholder gp-oatly-3">
+              <div class="gp-content">
+                <div class="gp-text-block">
+                  <span class="gp-headline">Social</span>
+                  <span class="gp-sub">Meme-style content series</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spotify Project -->
+  <section class="view view--project" id="projectView-spotify">
+    <button class="back-btn" data-back="lounge" aria-label="Back to lounge">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      <span>back to lounge</span>
+    </button>
+    <div class="project-page">
+      <div class="project-hero project-hero--spotify">
+        <div class="project-hero-pattern"></div>
+        <div class="project-hero-content">
+          <span class="project-tag">Campaign</span>
+          <h2 class="project-title">Spotify</h2>
+          <p class="project-tagline">Your Vibe, Your Soundtrack</p>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-info">
+          <div class="project-meta">
+            <div class="meta-item">
+              <span class="meta-label">Role</span>
+              <span class="meta-value">Art Direction & Copy</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Type</span>
+              <span class="meta-value">Digital Campaign</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Year</span>
+              <span class="meta-value">2025</span>
+            </div>
+          </div>
+          <div class="project-description">
+            <p>A campaign for Spotify that turns listening habits into visual identities. We designed room-themed playlists — each space in the dreamhouse has its own soundtrack.</p>
+            <p>The concept bridges physical spaces and digital listening, making music feel as personal as interior design. Your room, your rules, your playlist.</p>
+          </div>
+        </div>
+        <div class="project-gallery">
+          <div class="gallery-item gi-large">
+            <div class="gallery-placeholder gp-spotify-1">
+              <div class="gp-content">
+                <svg viewBox="0 0 200 150" class="gp-illustration">
+                  <rect x="0" y="0" width="200" height="150" fill="#1a0a2e"/>
+                  <circle cx="100" cy="75" r="50" fill="none" stroke="#FF69B4" stroke-width="2" opacity="0.3"/>
+                  <circle cx="100" cy="75" r="35" fill="none" stroke="#FF00FF" stroke-width="2" opacity="0.4"/>
+                  <circle cx="100" cy="75" r="20" fill="none" stroke="#E6E6FA" stroke-width="2" opacity="0.5"/>
+                  <circle cx="100" cy="75" r="8" fill="#FF69B4"/>
+                  <path d="M85,65 Q100,55 115,65" stroke="#1DB954" stroke-width="3" fill="none" stroke-linecap="round"/>
+                  <path d="M88,75 Q100,67 112,75" stroke="#1DB954" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                  <path d="M91,85 Q100,79 109,85" stroke="#1DB954" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <text x="100" y="140" text-anchor="middle" font-size="8" fill="#E6E6FA" font-family="sans-serif">Hero Visual Placement</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gi-small">
+            <div class="gallery-placeholder gp-spotify-2">
+              <div class="gp-content">
+                <div class="gp-text-block">
+                  <span class="gp-headline">Playlist Art</span>
+                  <span class="gp-sub">Room-themed covers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item gi-small">
+            <div class="gallery-placeholder gp-spotify-3">
+              <div class="gp-content">
+                <div class="gp-text-block">
+                  <span class="gp-headline">Experience</span>
+                  <span class="gp-sub">Interactive web feature</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SVG Defs for gradients -->
+  <svg style="position:absolute;width:0;height:0">
+    <defs>
+      <linearGradient id="razorGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#fff" stop-opacity="0.3"/>
+        <stop offset="100%" stop-color="#FF69B4" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <script src="js/app.js"></script>
+  <script src="js/effects.js"></script>
+</body>
+</html>

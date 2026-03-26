@@ -1,0 +1,240 @@
+/* ============================================
+   DREAMHOUSE — Main Styles
+   Y2K Fashion Illustration Portfolio
+   ============================================ */
+
+/* === Reset & Base === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Core Palette */
+  --pink-hot: #FF69B4;
+  --pink-deep: #E0559D;
+  --pink-baby: #FFB6C1;
+  --pink-light: #FFE4EC;
+  --pink-blush: #FFF0F5;
+  --magenta: #FF00FF;
+  --magenta-dark: #CC00CC;
+  --blue-baby: #87CEEB;
+  --blue-sky: #ADD8E6;
+  --blue-deep: #5B9BD5;
+  --lavender: #E6E6FA;
+  --lavender-deep: #D8BFD8;
+  --coral: #FF7F7F;
+  --coral-light: #FFAA99;
+  --gold: #FFD700;
+  --gold-soft: #FFE4A0;
+  --mint: #98FB98;
+  --mint-soft: #C8FFD4;
+  --cream: #FFF8E7;
+  --white: #FFFFFF;
+  --black: #1a1a2e;
+  --gray-dark: #333;
+  --gray-mid: #666;
+  --gray-light: #ccc;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-accent: 'Caveat', cursive;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+
+  /* Transitions */
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-snap: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-fast: 200ms var(--ease-smooth);
+  --transition-med: 400ms var(--ease-smooth);
+  --transition-slow: 600ms var(--ease-smooth);
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--gray-dark);
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  cursor: none;
+}
+
+/* === Custom Cursor === */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--pink-hot);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s, height 0.15s, border-color 0.15s, background 0.15s;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.hovering {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 105, 180, 0.15);
+  border-color: var(--magenta);
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--pink-hot);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  transition: transform 0.08s linear, opacity 0.3s;
+}
+
+/* === Sparkle Effects === */
+.sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 12px;
+  color: var(--gold);
+  animation: sparkle-pop 0.8s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes sparkle-pop {
+  0% { transform: scale(0) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+/* === View System === */
+.view {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s var(--ease-smooth), visibility 0.6s;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.view.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.view.exiting {
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.4s, transform 0.4s var(--ease-smooth);
+}
+
+.view.entering {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.view.entering.active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s var(--ease-bounce);
+}
+
+/* === Back Button === */
+.back-btn {
+  position: fixed;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px 20px 10px 14px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--pink-hot);
+  border-radius: 50px;
+  color: var(--pink-deep);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: none;
+  transition: var(--transition-fast);
+  letter-spacing: 0.02em;
+}
+
+.back-btn:hover {
+  background: var(--pink-hot);
+  color: white;
+  transform: translateX(-4px);
+  box-shadow: 4px 4px 0 var(--pink-deep);
+}
+
+.back-btn svg {
+  flex-shrink: 0;
+}
+
+.back-btn:hover svg path {
+  stroke: white;
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pink-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pink-hot);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pink-deep);
+}
+
+/* === Selection === */
+::selection {
+  background: var(--pink-hot);
+  color: white;
+}
+
+/* === Utility === */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
