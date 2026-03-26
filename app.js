@@ -2,6 +2,20 @@
    DREAMHOUSE — Navigation & Interactions
    ============================================================ */
 
+/* --- Splash Screen --- */
+(function () {
+  const splash = document.getElementById('splash');
+  const enterBtn = document.getElementById('splash-enter');
+  if (splash && enterBtn) {
+    enterBtn.addEventListener('click', function () {
+      splash.classList.add('fade-out');
+      setTimeout(function () {
+        splash.classList.add('hidden');
+      }, 800);
+    });
+  }
+})();
+
 (function () {
   'use strict';
 
