@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DREAMHOUSE — Naomi & Jana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<!-- ==================== SPLASH SCREEN ==================== -->
+<div id="splash">
+  <div class="splash-content">
+    <div class="splash-stars">
+      <span class="splash-star s1">✦</span>
+      <span class="splash-star s2">⋆</span>
+      <span class="splash-star s3">✦</span>
+      <span class="splash-star s4">♥</span>
+      <span class="splash-star s5">✦</span>
+    </div>
+    <h1 class="splash-title">DREAMHOUSE</h1>
+    <p class="splash-sub">a portfolio by Naomi & Jana</p>
+    <button id="splash-enter" class="splash-btn">
+      <span class="sparkle">✦</span> Enter <span class="sparkle">✦</span>
+    </button>
+  </div>
+</div>
+
+<div id="app">
+
+  <!-- ==================== HOUSE VIEW ==================== -->
+  <div id="house-view" class="view active">
+    <!-- Floating decorations -->
+    <div class="deco deco-star deco-1">✦</div>
+    <div class="deco deco-star deco-2">✦</div>
+    <div class="deco deco-star deco-3">⋆</div>
+    <div class="deco deco-heart deco-4">♥</div>
+    <div class="deco deco-star deco-5">✦</div>
+    <div class="deco deco-flower deco-6">✿</div>
+    <div class="deco deco-star deco-7">⋆</div>
+    <div class="deco deco-heart deco-8">♥</div>
+
+    <div class="house-container">
+      <!-- Title -->
+      <h1 class="house-title">
+        <span class="title-star">✦</span>
+        DREAMHOUSE
+        <span class="title-star">✦</span>
+      </h1>
+      <p class="house-subtitle">Naomi & Jana — Click a room to explore</p>
+
+      <div class="house">
+        <!-- Roof -->
+        <div class="roof">
+          <div class="roof-triangle"></div>
+          <div class="roof-chimney"></div>
+          <div class="roof-window">
+            <div class="roof-window-glass"></div>
+          </div>
+        </div>
+
+        <!-- Rooms Grid -->
+        <div class="rooms-grid">
+          <!-- Floor 2 -->
+          <div class="room-cell" data-room="bathroom">
+            <div class="room-label">Bathroom</div>
+            <div class="room-interior bathroom-mini">
+              <div class="mini-wall"></div>
+              <div class="mini-floor"></div>
+              <div class="mini-bathtub"></div>
+              <div class="mini-mirror"></div>
+              <div class="mini-towel-rack"></div>
+              <div class="mini-rug"></div>
+            </div>
+            <div class="room-hover-text">Enter →</div>
+          </div>
+
+          <div class="room-cell" data-room="beauty">
+            <div class="room-label">Beauty Room</div>
+            <div class="room-interior beauty-mini">
+              <div class="mini-wall"></div>
+              <div class="mini-floor"></div>
+              <div class="mini-vanity"></div>
+              <div class="mini-vanity-mirror"></div>
+              <div class="mini-stool"></div>
+              <div class="mini-closet"></div>
+            </div>
+            <div class="room-hover-text">Enter →</div>
+          </div>
+
+          <div class="room-cell" data-room="studio">
+            <div class="room-label">Studio</div>
+            <div class="room-interior studio-mini">
+              <div class="mini-wall"></div>
+              <div class="mini-floor"></div>
+              <div class="mini-camera"></div>
+              <div class="mini-umbrella"></div>
+              <div class="mini-moodboard"></div>
+              <div class="mini-chair"></div>
+            </div>
+            <div class="room-hover-text">Enter →</div>
+          </div>
+
+          <!-- Floor 1 -->
+          <div class="room-cell" data-room="living">
+            <div class="room-label">Living Room</div>
+            <div class="room-interior living-mini">
+              <div class="mini-wall"></div>
+              <div class="mini-floor"></div>
+              <div class="mini-sofa"></div>
+              <div class="mini-coffee-table"></div>
+              <div class="mini-lamp"></div>
+              <div class="mini-window"></div>
+            </div>
+            <div class="room-hover-text">Enter →</div>
+          </div>
+
+          <div class="room-cell" data-room="office">
+            <div class="room-label">Office</div>
+            <div class="room-interior office-mini">
+              <div class="mini-wall"></div>
+              <div class="mini-floor"></div>
+              <div class="mini-desk"></div>
+              <div class="mini-laptop"></div>
+              <div class="mini-office-chair"></div>
+              <div class="mini-bookshelf"></div>
+              <div class="mini-plant"></div>
+            </div>
+            <div class="room-hover-text">Enter →</div>
+          </div>
+
+          <div class="room-cell" data-room="lounge">
+            <div class="room-label">Lounge</div>
+            <div class="room-interior lounge-mini">
+              <div class="mini-wall"></div>
+              <div class="mini-floor"></div>
+              <div class="mini-bar"></div>
+              <div class="mini-pendant"></div>
+              <div class="mini-armchair"></div>
+              <div class="mini-side-table"></div>
+            </div>
+            <div class="room-hover-text">Enter →</div>
+          </div>
+        </div>
+
+        <!-- Foundation -->
+        <div class="foundation">
+          <div class="foundation-door">
+            <div class="foundation-door-panel"></div>
+            <div class="foundation-door-knob"></div>
+          </div>
+          <div class="foundation-step"></div>
+        </div>
+
+        <!-- Landscaping -->
+        <div class="landscaping">
+          <div class="flower-box flower-box-left">
+            <div class="flower f1"></div>
+            <div class="flower f2"></div>
+            <div class="flower f3"></div>
+            <div class="flower-stem fs1"></div>
+            <div class="flower-stem fs2"></div>
+            <div class="flower-stem fs3"></div>
+          </div>
+          <div class="flower-box flower-box-right">
+            <div class="flower f4"></div>
+            <div class="flower f5"></div>
+            <div class="flower f6"></div>
+            <div class="flower-stem fs4"></div>
+            <div class="flower-stem fs5"></div>
+            <div class="flower-stem fs6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ROOM VIEW ==================== -->
+  <div id="room-view" class="view">
+    <button class="back-btn" id="room-back-btn">
+      <span class="back-arrow">←</span> Back to House
+    </button>
+    <div class="room-name-banner" id="room-name-banner"></div>
+
+    <!-- BATHROOM -->
+    <div class="room-detail" id="room-bathroom">
+      <div class="room-full bathroom-full">
+        <!-- Wall pattern -->
+        <div class="bath-tiles"></div>
+        <!-- Floor -->
+        <div class="bath-floor"></div>
+        <!-- Window -->
+        <div class="bath-window">
+          <div class="bath-window-sky"></div>
+          <div class="bath-window-frame-h"></div>
+          <div class="bath-window-frame-v"></div>
+          <div class="bath-curtain bath-curtain-l"></div>
+          <div class="bath-curtain bath-curtain-r"></div>
+        </div>
+        <!-- Mirror -->
+        <div class="bath-mirror">
+          <div class="bath-mirror-shine"></div>
+        </div>
+        <!-- Shelf -->
+        <div class="bath-shelf">
+          <div class="bath-bottle bath-bottle-1"></div>
+          <div class="bath-bottle bath-bottle-2"></div>
+          <div class="bath-bottle bath-bottle-3"></div>
+        </div>
+        <!-- Towel rack -->
+        <div class="bath-towel-rack">
+          <div class="bath-towel"></div>
+        </div>
+        <!-- Bathtub — CLICKABLE -->
+        <div class="bath-tub clickable-object" data-project="gillette">
+          <div class="bath-tub-inner"></div>
+          <div class="bath-tub-faucet"></div>
+          <div class="bath-tub-handle"></div>
+          <div class="bath-razor"></div>
+          <div class="bath-foam"></div>
+          <div class="click-hint">
+            <span class="sparkle">✦</span> Click me <span class="sparkle">✦</span>
+          </div>
+        </div>
+        <!-- Rug -->
+        <div class="bath-rug"></div>
+        <!-- Plant -->
+        <div class="bath-plant">
+          <div class="bath-pot"></div>
+          <div class="bath-leaf bath-leaf-1"></div>
+          <div class="bath-leaf bath-leaf-2"></div>
+          <div class="bath-leaf bath-leaf-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEAUTY ROOM -->
+    <div class="room-detail" id="room-beauty">
+      <div class="room-full beauty-full">
+        <!-- Wall with polka dots -->
+        <div class="beauty-wall"></div>
+        <div class="beauty-floor"></div>
+        <!-- Closet -->
+        <div class="beauty-closet">
+          <div class="beauty-closet-door beauty-closet-door-l">
+            <div class="beauty-closet-handle"></div>
+          </div>
+          <div class="beauty-closet-door beauty-closet-door-r">
+            <div class="beauty-closet-handle"></div>
+          </div>
+          <div class="beauty-clothes">
+            <div class="beauty-hanger beauty-hanger-1"></div>
+            <div class="beauty-hanger beauty-hanger-2"></div>
+            <div class="beauty-hanger beauty-hanger-3"></div>
+          </div>
+        </div>
+        <!-- Vanity — CLICKABLE -->
+        <div class="beauty-vanity clickable-object" data-project="kerastase">
+          <div class="beauty-vanity-table"></div>
+          <div class="beauty-vanity-legs"></div>
+          <div class="beauty-vanity-mirror">
+            <div class="beauty-mirror-glass">
+              <div class="beauty-mirror-shine"></div>
+            </div>
+            <div class="beauty-mirror-lights beauty-mirror-lights-l"></div>
+            <div class="beauty-mirror-lights beauty-mirror-lights-r"></div>
+          </div>
+          <div class="beauty-makeup beauty-makeup-1"></div>
+          <div class="beauty-makeup beauty-makeup-2"></div>
+          <div class="beauty-makeup beauty-makeup-3"></div>
+          <div class="beauty-hairbrush"></div>
+          <div class="click-hint">
+            <span class="sparkle">✦</span> Click me <span class="sparkle">✦</span>
+          </div>
+        </div>
+        <!-- Stool -->
+        <div class="beauty-stool">
+          <div class="beauty-stool-seat"></div>
+          <div class="beauty-stool-leg"></div>
+        </div>
+        <!-- Rug -->
+        <div class="beauty-rug"></div>
+        <!-- Wall art -->
+        <div class="beauty-frame">
+          <div class="beauty-frame-inner"></div>
+        </div>
+        <!-- Chandelier -->
+        <div class="beauty-chandelier">
+          <div class="beauty-chandelier-chain"></div>
+          <div class="beauty-chandelier-body"></div>
+          <div class="beauty-chandelier-crystal beauty-crystal-1"></div>
+          <div class="beauty-chandelier-crystal beauty-crystal-2"></div>
+          <div class="beauty-chandelier-crystal beauty-crystal-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STUDIO -->
+    <div class="room-detail" id="room-studio">
+      <div class="room-full studio-full">
+        <div class="studio-wall"></div>
+        <div class="studio-floor"></div>
+        <!-- Mood board -->
+        <div class="studio-moodboard">
+          <div class="studio-photo studio-photo-1"></div>
+          <div class="studio-photo studio-photo-2"></div>
+          <div class="studio-photo studio-photo-3"></div>
+          <div class="studio-photo studio-photo-4"></div>
+          <div class="studio-pin studio-pin-1"></div>
+          <div class="studio-pin studio-pin-2"></div>
+        </div>
+        <!-- Backdrop -->
+        <div class="studio-backdrop"></div>
+        <!-- Camera — CLICKABLE -->
+        <div class="studio-camera clickable-object" data-project="sunset">
+          <div class="studio-tripod">
+            <div class="studio-tripod-leg studio-tripod-leg-1"></div>
+            <div class="studio-tripod-leg studio-tripod-leg-2"></div>
+            <div class="studio-tripod-leg studio-tripod-leg-3"></div>
+          </div>
+          <div class="studio-camera-body">
+            <div class="studio-lens"></div>
+            <div class="studio-flash"></div>
+          </div>
+          <div class="click-hint">
+            <span class="sparkle">✦</span> Click me <span class="sparkle">✦</span>
+          </div>
+        </div>
+        <!-- Light umbrella -->
+        <div class="studio-light">
+          <div class="studio-light-stand"></div>
+          <div class="studio-light-umbrella"></div>
+        </div>
+        <!-- Director chair -->
+        <div class="studio-dir-chair">
+          <div class="studio-dir-back"></div>
+          <div class="studio-dir-seat"></div>
+          <div class="studio-dir-legs"></div>
+        </div>
+        <!-- Pendant lights -->
+        <div class="studio-pendant studio-pendant-1"></div>
+        <div class="studio-pendant studio-pendant-2"></div>
+      </div>
+    </div>
+
+    <!-- LIVING ROOM -->
+    <div class="room-detail" id="room-living">
+      <div class="room-full living-full">
+        <div class="living-wall"></div>
+        <div class="living-floor"></div>
+        <!-- Window with city skyline -->
+        <div class="living-window">
+          <div class="living-sky"></div>
+          <div class="living-building living-building-1"></div>
+          <div class="living-building living-building-2"></div>
+          <div class="living-building living-building-3"></div>
+          <div class="living-building living-building-4"></div>
+          <div class="living-curtain living-curtain-l"></div>
+          <div class="living-curtain living-curtain-r"></div>
+        </div>
+        <!-- Sofa -->
+        <div class="living-sofa">
+          <div class="living-sofa-back"></div>
+          <div class="living-sofa-seat"></div>
+          <div class="living-sofa-arm living-sofa-arm-l"></div>
+          <div class="living-sofa-arm living-sofa-arm-r"></div>
+          <div class="living-cushion living-cushion-1"></div>
+          <div class="living-cushion living-cushion-2"></div>
+        </div>
+        <!-- Coffee table with magazines — CLICKABLE -->
+        <div class="living-table clickable-object" data-project="vogue">
+          <div class="living-table-top"></div>
+          <div class="living-table-leg living-table-leg-l"></div>
+          <div class="living-table-leg living-table-leg-r"></div>
+          <div class="living-magazine living-magazine-1"></div>
+          <div class="living-magazine living-magazine-2"></div>
+          <div class="living-magazine living-magazine-3"></div>
+          <div class="living-coffee-cup"></div>
+          <div class="click-hint">
+            <span class="sparkle">✦</span> Click me <span class="sparkle">✦</span>
+          </div>
+        </div>
+        <!-- Floor lamp -->
+        <div class="living-lamp">
+          <div class="living-lamp-shade"></div>
+          <div class="living-lamp-stand"></div>
+          <div class="living-lamp-base"></div>
+          <div class="living-lamp-glow"></div>
+        </div>
+        <!-- Rug -->
+        <div class="living-rug"></div>
+        <!-- Wall art -->
+        <div class="living-art">
+          <div class="living-art-inner"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OFFICE -->
+    <div class="room-detail" id="room-office">
+      <div class="room-full office-full">
+        <div class="office-wall"></div>
+        <div class="office-floor"></div>
+        <!-- Bookshelf -->
+        <div class="office-bookshelf">
+          <div class="office-shelf office-shelf-1"></div>
+          <div class="office-shelf office-shelf-2"></div>
+          <div class="office-shelf office-shelf-3"></div>
+          <div class="office-book office-book-1"></div>
+          <div class="office-book office-book-2"></div>
+          <div class="office-book office-book-3"></div>
+          <div class="office-book office-book-4"></div>
+          <div class="office-book office-book-5"></div>
+          <div class="office-book office-book-6"></div>
+          <div class="office-book office-book-7"></div>
+          <div class="office-book office-book-8"></div>
+          <div class="office-book office-book-9"></div>
+        </div>
+        <!-- Desk with laptop — CLICKABLE -->
+        <div class="office-desk clickable-object" data-project="aboutus">
+          <div class="office-desk-top"></div>
+          <div class="office-desk-drawer"></div>
+          <div class="office-desk-leg office-desk-leg-l"></div>
+          <div class="office-desk-leg office-desk-leg-r"></div>
+          <div class="office-laptop">
+            <div class="office-laptop-screen">
+              <div class="office-laptop-content"></div>
+            </div>
+            <div class="office-laptop-base"></div>
+          </div>
+          <div class="office-pen-cup"></div>
+          <div class="click-hint">
+            <span class="sparkle">✦</span> Click me <span class="sparkle">✦</span>
+          </div>
+        </div>
+        <!-- Office chair -->
+        <div class="office-chair">
+          <div class="office-chair-back"></div>
+          <div class="office-chair-seat"></div>
+          <div class="office-chair-stem"></div>
+          <div class="office-chair-wheels"></div>
+        </div>
+        <!-- Plant -->
+        <div class="office-plant">
+          <div class="office-pot"></div>
+          <div class="office-leaf office-leaf-1"></div>
+          <div class="office-leaf office-leaf-2"></div>
+          <div class="office-leaf office-leaf-3"></div>
+          <div class="office-leaf office-leaf-4"></div>
+        </div>
+        <!-- Pendant light -->
+        <div class="office-pendant"></div>
+        <!-- Wall clock -->
+        <div class="office-clock">
+          <div class="office-clock-hand office-clock-hand-h"></div>
+          <div class="office-clock-hand office-clock-hand-m"></div>
+          <div class="office-clock-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOUNGE -->
+    <div class="room-detail" id="room-lounge">
+      <div class="room-full lounge-full">
+        <div class="lounge-wall"></div>
+        <div class="lounge-floor"></div>
+        <!-- Bar cabinet -->
+        <div class="lounge-bar">
+          <div class="lounge-bar-top"></div>
+          <div class="lounge-bar-body"></div>
+          <div class="lounge-bar-shelf"></div>
+          <div class="lounge-bottle lounge-bottle-1"></div>
+          <div class="lounge-bottle lounge-bottle-2"></div>
+          <div class="lounge-bottle lounge-bottle-3"></div>
+          <div class="lounge-glass-row">
+            <div class="lounge-wine-glass"></div>
+            <div class="lounge-wine-glass"></div>
+          </div>
+        </div>
+        <!-- Armchair -->
+        <div class="lounge-armchair">
+          <div class="lounge-armchair-back"></div>
+          <div class="lounge-armchair-seat"></div>
+          <div class="lounge-armchair-arm lounge-arm-l"></div>
+          <div class="lounge-armchair-arm lounge-arm-r"></div>
+        </div>
+        <!-- Side table with cocktail — CLICKABLE -->
+        <div class="lounge-side-table clickable-object" data-project="midnight">
+          <div class="lounge-table-top"></div>
+          <div class="lounge-table-stem"></div>
+          <div class="lounge-table-base"></div>
+          <div class="lounge-cocktail">
+            <div class="lounge-cocktail-glass"></div>
+            <div class="lounge-cocktail-liquid"></div>
+            <div class="lounge-cocktail-olive"></div>
+            <div class="lounge-cocktail-stick"></div>
+          </div>
+          <div class="click-hint">
+            <span class="sparkle">✦</span> Click me <span class="sparkle">✦</span>
+          </div>
+        </div>
+        <!-- Pendant light -->
+        <div class="lounge-pendant">
+          <div class="lounge-pendant-cord"></div>
+          <div class="lounge-pendant-shade"></div>
+          <div class="lounge-pendant-glow"></div>
+        </div>
+        <!-- Record player -->
+        <div class="lounge-record">
+          <div class="lounge-record-body"></div>
+          <div class="lounge-record-disc"></div>
+          <div class="lounge-record-arm"></div>
+        </div>
+        <!-- Wall art (neon sign) -->
+        <div class="lounge-neon">cheers</div>
+        <!-- Rug -->
+        <div class="lounge-rug"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PROJECT VIEW ==================== -->
+  <div id="project-view" class="view">
+    <button class="back-btn" id="project-back-btn">
+      <span class="back-arrow">←</span> Back to Room
+    </button>
+
+    <!-- GILLETTE PROJECT -->
+    <div class="project-detail" id="project-gillette">
+      <div class="project-page">
+        <div class="project-hero" style="background: linear-gradient(135deg, #87CEEB 0%, #B5E8F7 50%, #E0F7FA 100%);">
+          <div class="project-hero-icon">🪒</div>
+        </div>
+        <div class="project-content">
+          <span class="project-tag">Campaign</span>
+          <h2 class="project-title">Gillette — Close Shave</h2>
+          <p class="project-desc">A fresh take on Gillette's self-care narrative. We reimagined the morning shaving ritual as a moment of confidence and empowerment — not just grooming, but a daily act of showing up as your best self.</p>
+          <div class="project-details">
+            <div class="project-detail-item">
+              <span class="project-detail-label">Role</span>
+              <span class="project-detail-value">Art Direction & Copy</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label">Team</span>
+              <span class="project-detail-value">Naomi & Jana</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label">Type</span>
+              <span class="project-detail-value">Print & Digital Campaign</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #87CEEB, #4A9BD9);"><div class="gallery-placeholder">Visual 1</div></div>
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #B5E8F7, #87CEEB);"><div class="gallery-placeholder">Visual 2</div></div>
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #E0F7FA, #B5E8F7);"><div class="gallery-placeholder">Visual 3</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KERASTASE PROJECT -->
+    <div class="project-detail" id="project-kerastase">
+      <div class="project-page">
+        <div class="project-hero" style="background: linear-gradient(135deg, #FF69B4 0%, #FFB6C1 50%, #FFF0F5 100%);">
+          <div class="project-hero-icon">💇‍♀️</div>
+        </div>
+        <div class="project-content">
+          <span class="project-tag">Campaign</span>
+          <h2 class="project-title">Kérastase — Hair Story</h2>
+          <p class="project-desc">Every strand tells a story. For Kérastase, we crafted a campaign that celebrates the emotional relationship between women and their hair — the transformations, the rituals, the confidence that comes from feeling beautiful from root to tip.</p>
+          <div class="project-details">
+            <div class="project-detail-item">
+              <span class="project-detail-label">Role</span>
+              <span class="project-detail-value">Art Direction & Copy</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label">Team</span>
+              <span class="project-detail-value">Naomi & Jana</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label">Type</span>
+              <span class="project-detail-value">Social & Video Campaign</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #FF69B4, #C71585);"><div class="gallery-placeholder">Visual 1</div></div>
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #FFB6C1, #FF69B4);"><div class="gallery-placeholder">Visual 2</div></div>
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #FFF0F5, #FFB6C1);"><div class="gallery-placeholder">Visual 3</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUNSET PROJECT -->
+    <div class="project-detail" id="project-sunset">
+      <div class="project-page">
+        <div class="project-hero" style="background: linear-gradient(135deg, #9B59B6 0%, #D8C4E9 50%, #F0E6FF 100%);">
+          <div class="project-hero-icon">📸</div>
+        </div>
+        <div class="project-content">
+          <span class="project-tag">Editorial</span>
+          <h2 class="project-title">Sunset Boulevard — Fashion Editorial</h2>
+          <p class="project-desc">A golden-hour fashion editorial inspired by old Hollywood glamour meets modern streetwear. Shot on location, styled to perfection — because fashion isn't just what you wear, it's the light you stand in.</p>
+          <div class="project-details">
+            <div class="project-detail-item">
+              <span class="project-detail-label">Role</span>
+              <span class="project-detail-value">Creative Direction & Styling</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label">Team</span>
+              <span class="project-detail-value">Naomi & Jana</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label">Type</span>
+              <span class="project-detail-value">Fashion Editorial</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #9B59B6, #6C3483);"><div class="gallery-placeholder">Visual 1</div></div>
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #D8C4E9, #9B59B6);"><div class="gallery-placeholder">Visual 2</div></div>
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #F0E6FF, #D8C4E9);"><div class="gallery-placeholder">Visual 3</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VOGUE PROJECT -->
+    <div class="project-detail" id="project-vogue">
+      <div class="project-page">
+        <div class="project-hero" style="background: linear-gradient(135deg, #FF7F7F 0%, #FFB6A3 50%, #FFE4D6 100%);">
+          <div class="project-hero-icon">📖</div>
+        </div>
+        <div class="project-content">
+          <span class="project-tag">Concept</span>
+          <h2 class="project-title">Vogue Feature — The New Wave</h2>
+          <p class="project-desc">A conceptual magazine spread exploring the next generation of creative voices. We designed a feature that speaks to ambition, style, and the unapologetic energy of young creatives breaking into the industry.</p>
+          <div class="project-details">
+            <div class="project-detail-item">
+              <span class="project-detail-label">Role</span>
+              <span class="project-detail-value">Art Direction & Copy</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label">Team</span>
+              <span class="project-detail-value">Naomi & Jana</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label">Type</span>
+              <span class="project-detail-value">Magazine Concept Spread</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #FF7F7F, #D44A4A);"><div class="gallery-placeholder">Visual 1</div></div>
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #FFB6A3, #FF7F7F);"><div class="gallery-placeholder">Visual 2</div></div>
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #FFE4D6, #FFB6A3);"><div class="gallery-placeholder">Visual 3</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT US -->
+    <div class="project-detail" id="project-aboutus">
+      <div class="project-page">
+        <div class="project-hero" style="background: linear-gradient(135deg, #FF00FF 0%, #FF69B4 50%, #FFB6C1 100%);">
+          <div class="project-hero-icon">💖</div>
+        </div>
+        <div class="project-content">
+          <span class="project-tag">About Us</span>
+          <h2 class="project-title">Meet Naomi & Jana</h2>
+          <p class="project-desc">We're an art director and a copywriter who believe advertising should make you feel something. We met at university, bonded over a shared love of bold ideas and beautiful craft, and have been creating together ever since.</p>
+          <div class="about-duo">
+            <div class="about-person">
+              <div class="about-avatar" style="background: linear-gradient(135deg, #FF69B4, #FF1493);">N</div>
+              <h3>Naomi</h3>
+              <p class="about-role">Art Director</p>
+              <p class="about-bio">Obsessed with colour, composition, and making people stop scrolling. Turns briefs into visual worlds you want to live in.</p>
+            </div>
+            <div class="about-person">
+              <div class="about-avatar" style="background: linear-gradient(135deg, #87CEEB, #4A9BD9);">J</div>
+              <h3>Jana</h3>
+              <p class="about-role">Copywriter</p>
+              <p class="about-bio">Words that land. From taglines that stick in your head to long-form that moves you — she writes for humans, not algorithms.</p>
+            </div>
+          </div>
+          <div class="about-cta">
+            <p>Looking for interns who bring big energy and bold ideas?</p>
+            <a href="mailto:hello@dreamhouse.portfolio" class="about-email">hello@dreamhouse.portfolio ✉</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MIDNIGHT PROJECT -->
+    <div class="project-detail" id="project-midnight">
+      <div class="project-page">
+        <div class="project-hero" style="background: linear-gradient(135deg, #1a0a2e 0%, #9B1B5E 50%, #FF69B4 100%);">
+          <div class="project-hero-icon">🍸</div>
+        </div>
+        <div class="project-content">
+          <span class="project-tag">Campaign</span>
+          <h2 class="project-title">Midnight Glow — Fragrance Launch</h2>
+          <p class="project-desc">A seductive fragrance campaign for the after-dark crowd. We built a world of velvet nights, city lights, and the kind of confidence that only comes alive when the sun goes down.</p>
+          <div class="project-details">
+            <div class="project-detail-item">
+              <span class="project-detail-label">Role</span>
+              <span class="project-detail-value">Creative Direction & Copy</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label">Team</span>
+              <span class="project-detail-value">Naomi & Jana</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label">Type</span>
+              <span class="project-detail-value">360° Fragrance Campaign</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #1a0a2e, #4a1942);"><div class="gallery-placeholder">Visual 1</div></div>
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #9B1B5E, #1a0a2e);"><div class="gallery-placeholder">Visual 2</div></div>
+            <div class="project-gallery-item" style="background: linear-gradient(135deg, #FF69B4, #9B1B5E);"><div class="gallery-placeholder">Visual 3</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>

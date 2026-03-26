@@ -1,0 +1,13 @@
+{
+  "name": "dreamhouse-alpha",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dreamhouse Portfolio — Naomi & Jana",
+  "scripts": {
+    "dev": "npx serve .",
+    "deploy": "npx gh-pages -d . -b gh-pages -t"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}

@@ -1,0 +1,2198 @@
+/* ============================================================
+   DREAMHOUSE — CSS Illustration Portfolio
+   Naomi & Jana | Y2K Fashion Illustration Aesthetic
+   ============================================================ */
+
+/* ============================================================
+   SPLASH SCREEN
+   ============================================================ */
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #FF69B4 0%, #FF1493 30%, #C71585 60%, #9B1B5E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+#splash.fade-out {
+  opacity: 0;
+  transform: scale(1.1);
+  pointer-events: none;
+}
+#splash.hidden { display: none; }
+
+.splash-content {
+  text-align: center;
+  animation: splashIn 1s ease-out;
+}
+@keyframes splashIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.splash-stars {
+  margin-bottom: 1rem;
+}
+.splash-star {
+  display: inline-block;
+  color: #FFD700;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  animation: twinkle 1.5s ease-in-out infinite alternate;
+}
+.splash-star.s1 { animation-delay: 0s; }
+.splash-star.s2 { animation-delay: 0.3s; font-size: 1rem; color: #FFB6C1; }
+.splash-star.s3 { animation-delay: 0.6s; }
+.splash-star.s4 { animation-delay: 0.9s; color: #FFF; font-size: 1.2rem; }
+.splash-star.s5 { animation-delay: 1.2s; }
+
+.splash-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 6rem);
+  color: white;
+  margin: 0 0 0.3em 0;
+  letter-spacing: 0.15em;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.2), 0 0 60px rgba(255,255,255,0.15);
+  line-height: 1;
+}
+
+.splash-sub {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 2.5em 0;
+  letter-spacing: 0.12em;
+}
+
+.splash-btn {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #FF1493;
+  background: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  letter-spacing: 0.1em;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2), 0 0 0 3px rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 1 L4 17 L8 13 L12 19 L14 18 L10 12 L15 11 Z' fill='%23FFD700' stroke='%23FF69B4' stroke-width='1'/%3E%3C/svg%3E"), pointer;
+}
+.splash-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 3px rgba(255,255,255,0.5);
+  background: #FFF5F9;
+}
+
+/* ---------- CUSTOM CURSOR ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M3 1 L3 16 L7 12 L11 18 L13 17 L9 11 L14 10 Z' fill='%23FF69B4' stroke='%23C71585' stroke-width='1'/%3E%3C/svg%3E"), auto;
+}
+
+.clickable-object, .room-cell, .back-btn, a {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M4 1 L4 17 L8 13 L12 19 L14 18 L10 12 L15 11 Z' fill='%23FFD700' stroke='%23FF69B4' stroke-width='1'/%3E%3C/svg%3E"), pointer;
+}
+
+/* ---------- RESET & BASE ---------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(180deg, #FFF0F5 0%, #FFE4F0 30%, #FCD5E8 60%, #F8BBD9 100%);
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+.house-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #FF1493;
+  text-align: center;
+  margin: 0 0 0.2em 0;
+  letter-spacing: 0.15em;
+  text-shadow: 2px 2px 0 #FFB6C1, 4px 4px 0 rgba(255,20,147,0.15);
+  position: relative;
+}
+
+.title-star {
+  color: #FFD700;
+  font-size: 0.6em;
+  vertical-align: middle;
+  animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+.house-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #C71585;
+  text-align: center;
+  margin: 0 0 1.5em 0;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+}
+
+/* ---------- VIEWS ---------- */
+.view {
+  display: none;
+  min-height: 100vh;
+  position: relative;
+}
+.view.active {
+  display: block;
+  animation: fadeIn 0.5s ease-out;
+}
+
+#room-view {
+  background: linear-gradient(180deg, #FFF0F5 0%, #FFE4F0 100%);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- FLOATING DECORATIONS ---------- */
+.deco {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  animation: float 6s ease-in-out infinite alternate;
+  opacity: 0.4;
+}
+.deco-star { color: #FFD700; font-size: 1.5rem; }
+.deco-heart { color: #FF69B4; font-size: 1.2rem; }
+.deco-flower { color: #FF1493; font-size: 1.8rem; }
+.deco-1 { top: 8%; left: 5%; animation-delay: 0s; }
+.deco-2 { top: 15%; right: 8%; animation-delay: 1s; }
+.deco-3 { top: 40%; left: 3%; animation-delay: 2s; font-size: 1rem; }
+.deco-4 { top: 60%; right: 5%; animation-delay: 0.5s; }
+.deco-5 { top: 80%; left: 8%; animation-delay: 1.5s; }
+.deco-6 { top: 25%; right: 3%; animation-delay: 3s; }
+.deco-7 { top: 70%; right: 12%; animation-delay: 2.5s; font-size: 1rem; }
+.deco-8 { top: 50%; left: 6%; animation-delay: 4s; }
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-15px) rotate(10deg); }
+}
+
+/* ---------- HOUSE CONTAINER ---------- */
+.house-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.house {
+  position: relative;
+  width: clamp(320px, 85vw, 900px);
+  max-width: 900px;
+}
+
+/* ---------- ROOF ---------- */
+.roof {
+  position: relative;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.roof-triangle {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(135deg, #FF69B4 0%, #FF1493 50%, #C71585 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  position: relative;
+  border-radius: 2px;
+}
+.roof-triangle::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent,
+    transparent 12px,
+    rgba(255,255,255,0.12) 12px,
+    rgba(255,255,255,0.12) 14px
+  );
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.roof-chimney {
+  position: absolute;
+  right: 18%;
+  top: 10px;
+  width: 35px;
+  height: 50px;
+  background: linear-gradient(180deg, #C71585, #A0125A);
+  border-radius: 3px 3px 0 0;
+  z-index: 2;
+}
+.roof-chimney::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -4px;
+  width: calc(100% + 8px);
+  height: 8px;
+  background: #FF1493;
+  border-radius: 2px;
+}
+
+.roof-window {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 45px;
+  background: #C71585;
+  border-radius: 50% 50% 0 0 / 60% 60% 0 0;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  overflow: hidden;
+  z-index: 2;
+}
+.roof-window-glass {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 25px;
+  background: linear-gradient(180deg, #87CEEB, #B5E8F7);
+  border-radius: 50% 50% 0 0 / 70% 70% 0 0;
+  clip-path: polygon(50% 0%, 5% 100%, 95% 100%);
+}
+
+/* ---------- ROOMS GRID ---------- */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 4px;
+  background: #A0125A;
+  border: 6px solid #A0125A;
+  border-top: none;
+  aspect-ratio: 3 / 2;
+}
+
+/* ---------- ROOM CELL ---------- */
+.room-cell {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room-cell:hover {
+  transform: scale(1.02);
+  z-index: 10;
+  box-shadow: 0 0 30px rgba(255,105,180,0.5), inset 0 0 30px rgba(255,255,255,0.15);
+}
+
+.room-label {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,20,147,0.85);
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.5rem, 1.5vw, 0.8rem);
+  padding: 3px 10px;
+  border-radius: 20px;
+  z-index: 5;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.room-cell:hover .room-label {
+  opacity: 1;
+}
+
+.room-hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.92);
+  color: #FF1493;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.7rem, 2vw, 1rem);
+  padding: 6px 16px;
+  border-radius: 20px;
+  z-index: 6;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 15px rgba(255,20,147,0.3);
+}
+.room-cell:hover .room-hover-text {
+  opacity: 1;
+}
+
+/* ---------- ROOM INTERIORS (Mini - House View) ---------- */
+.room-interior {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* -- Bathroom Mini -- */
+.bathroom-mini .mini-wall {
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent, transparent 18px, rgba(255,255,255,0.3) 18px, rgba(255,255,255,0.3) 20px),
+    repeating-linear-gradient(180deg, transparent, transparent 18px, rgba(255,255,255,0.3) 18px, rgba(255,255,255,0.3) 20px),
+    linear-gradient(180deg, #B5E8F7 0%, #87CEEB 100%);
+}
+.bathroom-mini .mini-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 22%;
+  background:
+    repeating-conic-gradient(#E8E8E8 0% 25%, white 0% 50%) 50% / 16px 16px;
+}
+.bathroom-mini .mini-bathtub {
+  position: absolute; bottom: 22%; left: 10%; width: 55%; height: 28%;
+  background: linear-gradient(180deg, #fff 0%, #E8F4FD 100%);
+  border-radius: 5px 5px 50% 50% / 5px 5px 30% 30%;
+  border: 2px solid #D0E8F2;
+}
+.bathroom-mini .mini-bathtub::before {
+  content: '';
+  position: absolute; top: -15%; right: 12%;
+  width: 8%; height: 18%;
+  background: #C0C0C0;
+  border-radius: 2px 2px 0 0;
+}
+.bathroom-mini .mini-mirror {
+  position: absolute; top: 12%; left: 65%; width: 22%; height: 30%;
+  background: linear-gradient(135deg, #E0F7FA, #fff, #E0F7FA);
+  border-radius: 50%;
+  border: 3px solid #FFD700;
+  box-shadow: 0 0 8px rgba(255,215,0,0.3);
+}
+.bathroom-mini .mini-towel-rack {
+  position: absolute; top: 35%; right: 8%; width: 4%; height: 25%;
+  background: #C0C0C0;
+  border-radius: 2px;
+}
+.bathroom-mini .mini-towel-rack::before {
+  content: '';
+  position: absolute; top: 20%; left: -200%;
+  width: 400%; height: 35%;
+  background: #FF69B4;
+  border-radius: 2px;
+}
+.bathroom-mini .mini-rug {
+  position: absolute; bottom: 6%; left: 25%; width: 35%; height: 8%;
+  background: #FFB6C1;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* -- Beauty Room Mini -- */
+.beauty-mini .mini-wall {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.25) 8px, transparent 8px) 0 0 / 24px 24px,
+    linear-gradient(180deg, #FF69B4 0%, #FF85C2 100%);
+}
+.beauty-mini .mini-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 20%;
+  background: linear-gradient(180deg, #FFF0F5, #FFE4E9);
+}
+.beauty-mini .mini-vanity {
+  position: absolute; bottom: 20%; left: 30%; width: 40%; height: 12%;
+  background: linear-gradient(180deg, #FFF, #F8E8EE);
+  border-radius: 3px;
+  border: 1px solid #FFB6C1;
+}
+.beauty-mini .mini-vanity::after {
+  content: '';
+  position: absolute; bottom: -30%; left: 10%; width: 15%; height: 30%;
+  background: #FFB6C1;
+  box-shadow: calc(40% * 4) 0 0 #FFB6C1;
+}
+.beauty-mini .mini-vanity-mirror {
+  position: absolute; top: 15%; left: 37%; width: 26%; height: 35%;
+  background: linear-gradient(135deg, #FFF5F9, #FFE4F0, #FFF5F9);
+  border-radius: 50% 50% 5% 5%;
+  border: 3px solid #FFD700;
+}
+.beauty-mini .mini-stool {
+  position: absolute; bottom: 20%; left: 40%; width: 18%; height: 10%;
+  background: #FF69B4;
+  border-radius: 50% 50% 0 0;
+}
+.beauty-mini .mini-closet {
+  position: absolute; top: 8%; right: 5%; width: 25%; height: 60%;
+  background: linear-gradient(180deg, #FFF, #FFE4EE);
+  border: 2px solid #FFB6C1;
+  border-radius: 3px;
+}
+.beauty-mini .mini-closet::before {
+  content: '';
+  position: absolute; top: 0; left: 50%; width: 2px; height: 100%;
+  background: #FFB6C1;
+  transform: translateX(-50%);
+}
+
+/* -- Studio Mini -- */
+.studio-mini .mini-wall {
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(255,255,255,0.08) 30px, rgba(255,255,255,0.08) 32px),
+    linear-gradient(180deg, #D8C4E9 0%, #C4A8D8 100%);
+}
+.studio-mini .mini-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 20%;
+  background: linear-gradient(180deg, #8B6F47, #6B4F2F);
+}
+.studio-mini .mini-camera {
+  position: absolute; bottom: 30%; left: 35%; width: 16%; height: 12%;
+  background: #333;
+  border-radius: 3px;
+}
+.studio-mini .mini-camera::before {
+  content: '';
+  position: absolute; left: 50%; bottom: -60%; transform: translateX(-50%);
+  width: 3px; height: 60%;
+  background: #555;
+}
+.studio-mini .mini-camera::after {
+  content: '';
+  position: absolute; left: 15%; top: 20%;
+  width: 35%; height: 60%;
+  background: #1a1a2e;
+  border-radius: 50%;
+  border: 2px solid #555;
+}
+.studio-mini .mini-umbrella {
+  position: absolute; top: 20%; right: 15%; width: 30%; height: 25%;
+  background: linear-gradient(180deg, #FFF, #EEE);
+  border-radius: 50% 50% 0 0;
+}
+.studio-mini .mini-umbrella::before {
+  content: '';
+  position: absolute; bottom: -80%; left: 50%;
+  width: 3px; height: 80%;
+  background: #555;
+  transform: translateX(-50%);
+}
+.studio-mini .mini-moodboard {
+  position: absolute; top: 8%; left: 5%; width: 28%; height: 35%;
+  background: #E8DDF0;
+  border: 2px solid #C4A8D8;
+  border-radius: 2px;
+}
+.studio-mini .mini-moodboard::before {
+  content: '';
+  position: absolute; top: 10%; left: 8%; width: 40%; height: 35%;
+  background: #FF69B4;
+  border-radius: 2px;
+}
+.studio-mini .mini-moodboard::after {
+  content: '';
+  position: absolute; top: 50%; right: 8%; width: 38%; height: 35%;
+  background: #87CEEB;
+  border-radius: 2px;
+}
+.studio-mini .mini-chair {
+  position: absolute; bottom: 20%; right: 10%; width: 18%; height: 20%;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* -- Living Room Mini -- */
+.living-mini .mini-wall {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #FFB6A3 0%, #FFA08C 100%);
+}
+.living-mini .mini-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 20%;
+  background: linear-gradient(180deg, #F5E6D3, #E8D5BF);
+}
+.living-mini .mini-sofa {
+  position: absolute; bottom: 20%; left: 8%; width: 50%; height: 20%;
+  background: linear-gradient(180deg, #FF1493, #FF69B4);
+  border-radius: 8px 8px 3px 3px;
+}
+.living-mini .mini-sofa::before {
+  content: '';
+  position: absolute; bottom: 100%; left: 0; width: 100%; height: 40%;
+  background: linear-gradient(180deg, #C71585, #FF1493);
+  border-radius: 6px 6px 0 0;
+}
+.living-mini .mini-coffee-table {
+  position: absolute; bottom: 20%; left: 62%; width: 25%; height: 10%;
+  background: linear-gradient(180deg, #D4A574, #B8864A);
+  border-radius: 2px;
+}
+.living-mini .mini-lamp {
+  position: absolute; bottom: 20%; right: 5%; width: 10%; height: 40%;
+  background: transparent;
+}
+.living-mini .mini-lamp::before {
+  content: '';
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 120%; height: 35%;
+  background: #FFD700;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+}
+.living-mini .mini-lamp::after {
+  content: '';
+  position: absolute; top: 30%; left: 50%; transform: translateX(-50%);
+  width: 15%; height: 70%;
+  background: #333;
+}
+.living-mini .mini-window {
+  position: absolute; top: 8%; left: 15%; width: 35%; height: 35%;
+  background: linear-gradient(180deg, #1a0a2e 0%, #2d1b4e 40%, #4a2f6e 100%);
+  border: 3px solid #FFB6A3;
+  border-radius: 2px;
+}
+.living-mini .mini-window::before {
+  content: '';
+  position: absolute; bottom: 0; left: 10%; width: 15%; height: 50%;
+  background: #2d1b4e;
+  box-shadow: 8px 0 0 #3d2b5e, 18px -10px 0 #4d3b6e;
+}
+
+/* -- Office Mini -- */
+.office-mini .mini-wall {
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 22px),
+    linear-gradient(180deg, #E91E90 0%, #D4187F 100%);
+}
+.office-mini .mini-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 20%;
+  background: linear-gradient(180deg, #E0E0E0, #CCCCCC);
+}
+.office-mini .mini-desk {
+  position: absolute; bottom: 20%; left: 20%; width: 45%; height: 12%;
+  background: #FFF;
+  border-radius: 2px;
+  border: 1px solid #EEE;
+}
+.office-mini .mini-desk::after {
+  content: '';
+  position: absolute; bottom: -40%; left: 8%; width: 12%; height: 40%;
+  background: #EEE;
+  box-shadow: calc(45% * 2) 0 0 #EEE;
+}
+.office-mini .mini-laptop {
+  position: absolute; bottom: 32%; left: 30%; width: 18%; height: 12%;
+  background: #333;
+  border-radius: 2px 2px 0 0;
+}
+.office-mini .mini-laptop::after {
+  content: '';
+  position: absolute; bottom: -20%; left: -8%; width: 116%; height: 20%;
+  background: #555;
+  border-radius: 0 0 2px 2px;
+}
+.office-mini .mini-office-chair {
+  position: absolute; bottom: 20%; right: 15%; width: 18%; height: 18%;
+  background: #FF69B4;
+  border-radius: 5px 5px 0 0;
+}
+.office-mini .mini-office-chair::after {
+  content: '';
+  position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+  width: 4px; height: 8px;
+  background: #333;
+}
+.office-mini .mini-bookshelf {
+  position: absolute; top: 8%; left: 5%; width: 20%; height: 55%;
+  background: #F5E6D3;
+  border: 2px solid #D4A574;
+  border-radius: 2px;
+}
+.office-mini .mini-bookshelf::before {
+  content: '';
+  position: absolute; top: 30%; left: 0; width: 100%; height: 2px;
+  background: #D4A574;
+  box-shadow: 0 -20px 0 2px #FF69B4, 4px -18px 0 2px #87CEEB, 8px -16px 0 2px #FFD700;
+}
+.office-mini .mini-plant {
+  position: absolute; bottom: 20%; right: 5%; width: 12%; height: 25%;
+  background: transparent;
+}
+.office-mini .mini-plant::before {
+  content: '';
+  position: absolute; bottom: 0; left: 20%; width: 60%; height: 35%;
+  background: #D4A574;
+  border-radius: 0 0 3px 3px;
+}
+.office-mini .mini-plant::after {
+  content: '';
+  position: absolute; bottom: 30%; left: 0; width: 100%; height: 70%;
+  background: radial-gradient(ellipse, #2ECC71, #27AE60);
+  border-radius: 50%;
+}
+
+/* -- Lounge Mini -- */
+.lounge-mini .mini-wall {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #3D1040 0%, #5A1A5E 50%, #6B2068 100%);
+}
+.lounge-mini .mini-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 20%;
+  background: linear-gradient(180deg, #2A0A2E, #1A0620);
+}
+.lounge-mini .mini-bar {
+  position: absolute; top: 15%; right: 5%; width: 30%; height: 50%;
+  background: linear-gradient(180deg, #4A1942, #3D1040);
+  border: 2px solid #6B2068;
+  border-radius: 3px;
+}
+.lounge-mini .mini-bar::before {
+  content: '';
+  position: absolute; top: -5px; left: -3px; width: calc(100% + 6px); height: 8px;
+  background: #8B4789;
+  border-radius: 2px;
+}
+.lounge-mini .mini-pendant {
+  position: absolute; top: 0; left: 35%; width: 2px; height: 18%;
+  background: #FFD700;
+}
+.lounge-mini .mini-pendant::after {
+  content: '';
+  position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+  width: 20px; height: 12px;
+  background: radial-gradient(ellipse, #FFD700, #FFC107);
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 3px 15px rgba(255,215,0,0.4);
+}
+.lounge-mini .mini-armchair {
+  position: absolute; bottom: 20%; left: 8%; width: 30%; height: 22%;
+  background: linear-gradient(180deg, #8B4789, #6B2068);
+  border-radius: 8px 8px 3px 3px;
+}
+.lounge-mini .mini-armchair::before {
+  content: '';
+  position: absolute; bottom: 100%; left: 5%; right: 5%; height: 30%;
+  background: linear-gradient(180deg, #6B2068, #8B4789);
+  border-radius: 5px 5px 0 0;
+}
+.lounge-mini .mini-side-table {
+  position: absolute; bottom: 20%; left: 42%; width: 14%; height: 14%;
+  background: #FFD700;
+  border-radius: 50%;
+}
+.lounge-mini .mini-side-table::after {
+  content: '';
+  position: absolute; bottom: -40%; left: 50%; transform: translateX(-50%);
+  width: 20%; height: 40%;
+  background: #C9A800;
+}
+
+/* ---------- FOUNDATION ---------- */
+.foundation {
+  height: 20px;
+  background: linear-gradient(180deg, #A0125A, #800F4A);
+  border-radius: 0 0 4px 4px;
+  position: relative;
+}
+.foundation-step {
+  position: absolute;
+  bottom: -10px;
+  left: 5%;
+  right: 5%;
+  height: 12px;
+  background: linear-gradient(180deg, #C71585, #A0125A);
+  border-radius: 0 0 6px 6px;
+}
+
+/* Front door */
+.foundation-door {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 40px;
+  z-index: 5;
+}
+.foundation-door-panel {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #FF1493, #C71585);
+  border-radius: 6px 6px 0 0;
+  border: 2px solid #A0125A;
+}
+.foundation-door-knob {
+  position: absolute;
+  top: 55%;
+  right: 6px;
+  width: 5px;
+  height: 5px;
+  background: #FFD700;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255,215,0,0.5);
+}
+
+/* ---------- LANDSCAPING ---------- */
+.landscaping {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin-top: -5px;
+}
+.flower-box {
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  height: 16px;
+  background: linear-gradient(180deg, #D4A574, #B8864A);
+  border-radius: 0 0 4px 4px;
+}
+.flower-box-left { left: 12%; }
+.flower-box-right { right: 12%; }
+
+.flower {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: -12px;
+  animation: flowerSway 3s ease-in-out infinite alternate;
+}
+.f1, .f4 { left: 8px; background: #FF69B4; animation-delay: 0s; }
+.f2, .f5 { left: 25px; background: #FFD700; animation-delay: 0.5s; }
+.f3, .f6 { left: 42px; background: #87CEEB; animation-delay: 1s; }
+
+.flower-stem {
+  position: absolute;
+  width: 2px;
+  height: 12px;
+  background: #2ECC71;
+  top: -8px;
+}
+.fs1, .fs4 { left: 12px; }
+.fs2, .fs5 { left: 29px; }
+.fs3, .fs6 { left: 46px; }
+
+@keyframes flowerSway {
+  0% { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
+/* ---------- HOUSE ENTRANCE ANIMATION ---------- */
+.house {
+  animation: houseAppear 1s ease-out;
+}
+@keyframes houseAppear {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.house-title {
+  animation: titleAppear 1s ease-out 0.2s both;
+}
+@keyframes titleAppear {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   ROOM DETAIL VIEW (Full Screen Rooms)
+   ============================================================ */
+.room-detail {
+  display: none;
+  width: 100%;
+  height: calc(100vh - 60px);
+  margin-top: 60px;
+}
+.room-detail.active {
+  display: block;
+  animation: roomEnter 0.6s ease-out;
+}
+
+@keyframes roomEnter {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.room-full {
+  width: 100%;
+  height: calc(100vh - 60px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* -- Back Button -- */
+.back-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  color: #FF1493;
+  border: 2px solid #FF69B4;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 18px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255,20,147,0.2);
+  backdrop-filter: blur(8px);
+}
+.back-btn:hover {
+  background: #FF1493;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,20,147,0.4);
+}
+.back-arrow { margin-right: 4px; }
+
+.room-name-banner {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  color: #C71585;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 8px 24px;
+  border-radius: 30px;
+  border: 2px solid #FFB6C1;
+  box-shadow: 0 4px 15px rgba(255,20,147,0.15);
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.1em;
+}
+
+/* ---------- CLICKABLE OBJECTS ---------- */
+.clickable-object {
+  transition: all 0.3s ease;
+  position: relative;
+}
+.clickable-object:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+.clickable-object::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+.clickable-object:hover::after {
+  border-color: #FFD700;
+  box-shadow: 0 0 20px rgba(255,215,0,0.4), 0 0 40px rgba(255,215,0,0.15);
+}
+
+.click-hint {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #FFD700;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+.clickable-object:hover .click-hint {
+  opacity: 1;
+}
+
+.sparkle {
+  display: inline-block;
+  animation: twinkle 1s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.4; transform: scale(0.8) rotate(0deg); }
+  100% { opacity: 1; transform: scale(1.2) rotate(20deg); }
+}
+
+/* ============================================================
+   BATHROOM FULL
+   ============================================================ */
+.bathroom-full {
+  background: linear-gradient(180deg, #B5E8F7 0%, #87CEEB 100%);
+}
+.bath-tiles {
+  position: absolute; inset: 0; bottom: 25%;
+  background:
+    repeating-linear-gradient(90deg, transparent, transparent 48px, rgba(255,255,255,0.35) 48px, rgba(255,255,255,0.35) 50px),
+    repeating-linear-gradient(180deg, transparent, transparent 48px, rgba(255,255,255,0.35) 48px, rgba(255,255,255,0.35) 50px);
+}
+.bath-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 25%;
+  background:
+    repeating-conic-gradient(#E8E8E8 0% 25%, white 0% 50%) 50% / 40px 40px;
+}
+
+/* Window */
+.bath-window {
+  position: absolute; top: 8%; left: 8%; width: 25%; height: 35%;
+  background: linear-gradient(180deg, #87CEEB 0%, #B5E8F7 60%, #E0F7FA 100%);
+  border: 4px solid white;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+.bath-window-sky { position: absolute; inset: 0; background: linear-gradient(180deg, #87CEEB, #B5E8F7); }
+.bath-window-frame-h { position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: white; transform: translateY(-50%); z-index: 1; }
+.bath-window-frame-v { position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: white; transform: translateX(-50%); z-index: 1; }
+.bath-curtain { position: absolute; top: -2px; width: 20%; height: 105%; z-index: 2; }
+.bath-curtain-l { left: -8%; background: linear-gradient(90deg, #FFB6C1, rgba(255,182,193,0.3)); border-radius: 0 0 0 8px; }
+.bath-curtain-r { right: -8%; background: linear-gradient(270deg, #FFB6C1, rgba(255,182,193,0.3)); border-radius: 0 0 8px 0; }
+
+/* Mirror */
+.bath-mirror {
+  position: absolute; top: 8%; right: 25%; width: 15%; height: 28%;
+  background: linear-gradient(135deg, #E0F7FA 0%, #FFF 30%, #E0F7FA 60%, #FFF 100%);
+  border-radius: 50%;
+  border: 5px solid #FFD700;
+  box-shadow: 0 0 15px rgba(255,215,0,0.25);
+  overflow: hidden;
+}
+.bath-mirror-shine {
+  position: absolute; top: 15%; right: 15%; width: 25%; height: 35%;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  transform: rotate(-30deg);
+}
+
+/* Shelf */
+.bath-shelf {
+  position: absolute; top: 15%; right: 6%; width: 14%; height: 4%;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.bath-bottle {
+  position: absolute; bottom: 100%; border-radius: 3px 3px 0 0;
+}
+.bath-bottle-1 { left: 10%; width: 20%; height: 300%; background: linear-gradient(180deg, #FF69B4, #FF1493); }
+.bath-bottle-2 { left: 40%; width: 22%; height: 250%; background: linear-gradient(180deg, #87CEEB, #4A9BD9); border-radius: 5px 5px 0 0; }
+.bath-bottle-3 { left: 70%; width: 18%; height: 200%; background: linear-gradient(180deg, #FFD700, #FFA500); }
+
+/* Towel rack */
+.bath-towel-rack {
+  position: absolute; top: 30%; right: 5%; width: 10%; height: 3%;
+  background: #C0C0C0;
+  border-radius: 10px;
+}
+.bath-towel {
+  position: absolute; top: 50%; left: 10%; width: 80%; height: 400%;
+  background: linear-gradient(180deg, #FF69B4 0%, #FF69B4 45%, #FFB6C1 45%, #FFB6C1 55%, #FF69B4 55%);
+  border-radius: 0 0 5px 5px;
+}
+
+/* Bathtub */
+.bath-tub {
+  position: absolute; bottom: 25%; left: 15%; width: 50%; height: 30%;
+}
+.bath-tub-inner {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 85%;
+  background: linear-gradient(180deg, #FFF 0%, #F0F8FF 50%, #E0F0FF 100%);
+  border-radius: 8px 8px 50% 50% / 8px 8px 25% 25%;
+  border: 3px solid #D0E8F2;
+  box-shadow: inset 0 -10px 30px rgba(135,206,235,0.2);
+}
+.bath-tub-faucet {
+  position: absolute; top: 0; right: 15%; width: 8%; height: 20%;
+  background: linear-gradient(90deg, #C0C0C0, #E8E8E8, #C0C0C0);
+  border-radius: 3px 3px 0 0;
+}
+.bath-tub-faucet::after {
+  content: '';
+  position: absolute; bottom: -5px; right: -30%; width: 60%; height: 30%;
+  background: #C0C0C0;
+  border-radius: 0 0 8px 0;
+}
+.bath-tub-handle {
+  position: absolute; top: 2%; right: 8%; width: 4%; height: 4%;
+  background: #FFD700;
+  border-radius: 50%;
+  border: 2px solid #C0C0C0;
+}
+.bath-razor {
+  position: absolute; top: 10%; left: 10%; width: 4%; height: 18%;
+  background: linear-gradient(180deg, #87CEEB, #4A9BD9);
+  border-radius: 2px;
+}
+.bath-razor::after {
+  content: '';
+  position: absolute; top: -30%; left: -30%; width: 160%; height: 30%;
+  background: #C0C0C0;
+  border-radius: 2px;
+}
+.bath-foam {
+  position: absolute; top: -5%; left: 18%; width: 30%; height: 15%;
+  background: radial-gradient(circle at 20% 60%, white 30%, transparent 30%),
+    radial-gradient(circle at 50% 40%, white 25%, transparent 25%),
+    radial-gradient(circle at 80% 55%, white 28%, transparent 28%);
+}
+
+/* Rug */
+.bath-rug {
+  position: absolute; bottom: 8%; left: 30%; width: 30%; height: 8%;
+  background: linear-gradient(90deg, #FFB6C1, #FF69B4, #FFB6C1);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* Plant */
+.bath-plant {
+  position: absolute; bottom: 25%; right: 8%; width: 10%; height: 25%;
+}
+.bath-pot {
+  position: absolute; bottom: 0; left: 15%; width: 70%; height: 30%;
+  background: linear-gradient(180deg, #D4A574, #B8864A);
+  border-radius: 0 0 8px 8px;
+  clip-path: polygon(5% 0%, 95% 0%, 80% 100%, 20% 100%);
+}
+.bath-leaf {
+  position: absolute; width: 40%; height: 50%;
+  background: #2ECC71;
+  border-radius: 0 80% 0 80%;
+}
+.bath-leaf-1 { bottom: 30%; left: 5%; transform: rotate(-30deg); background: #27AE60; }
+.bath-leaf-2 { bottom: 40%; left: 30%; transform: rotate(0deg); background: #2ECC71; }
+.bath-leaf-3 { bottom: 30%; right: 5%; transform: rotate(30deg); background: #27AE60; }
+
+/* ============================================================
+   BEAUTY ROOM FULL
+   ============================================================ */
+.beauty-full {
+  background: #FF69B4;
+}
+.beauty-wall {
+  position: absolute; inset: 0; bottom: 22%;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.2) 10px, transparent 10px) 0 0 / 35px 35px,
+    linear-gradient(180deg, #FF69B4 0%, #FF85C2 100%);
+}
+.beauty-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 22%;
+  background: linear-gradient(180deg, #FFF5F8, #FFE4EE);
+}
+
+/* Closet */
+.beauty-closet {
+  position: absolute; top: 5%; right: 4%; width: 28%; height: 65%;
+  background: linear-gradient(180deg, #FFF 0%, #FFF5F8 100%);
+  border: 3px solid #FFB6C1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.beauty-closet-door {
+  position: absolute; top: 0; width: 50%; height: 100%;
+  background: linear-gradient(180deg, #FFF, #FFF5F8);
+  border: 1px solid #FFB6C1;
+}
+.beauty-closet-door-l { left: 0; }
+.beauty-closet-door-r { right: 0; }
+.beauty-closet-handle {
+  position: absolute; top: 50%; width: 8px; height: 8px;
+  background: #FFD700;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.beauty-closet-door-l .beauty-closet-handle { right: 8px; }
+.beauty-closet-door-r .beauty-closet-handle { left: 8px; }
+.beauty-clothes {
+  position: absolute; top: 5%; left: 5%; right: 5%; bottom: 60%;
+  z-index: -1;
+}
+.beauty-hanger {
+  position: absolute; top: 0; width: 30%; height: 100%;
+  border-radius: 0 0 5px 5px;
+}
+.beauty-hanger-1 { left: 5%; background: linear-gradient(180deg, #FF1493, #C71585); }
+.beauty-hanger-2 { left: 35%; background: linear-gradient(180deg, #87CEEB, #4A9BD9); }
+.beauty-hanger-3 { left: 65%; background: linear-gradient(180deg, #FFD700, #FFA500); }
+
+/* Vanity */
+.beauty-vanity {
+  position: absolute; bottom: 22%; left: 15%; width: 42%; height: 45%;
+}
+.beauty-vanity-table {
+  position: absolute; bottom: 0; left: 5%; right: 5%; height: 25%;
+  background: linear-gradient(180deg, #FFF, #FFF5F8);
+  border: 2px solid #FFB6C1;
+  border-radius: 5px 5px 0 0;
+}
+.beauty-vanity-legs {
+  position: absolute; bottom: -12%; left: 12%; width: 8%; height: 12%;
+  background: #FFB6C1;
+  border-radius: 0 0 3px 3px;
+  box-shadow: calc(42% * 5) 0 0 #FFB6C1;
+}
+.beauty-vanity-mirror {
+  position: absolute; top: 0; left: 15%; width: 70%; height: 65%;
+}
+.beauty-mirror-glass {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #FFF5F9 0%, #FFE4F0 30%, #FFF 50%, #FFE4F0 70%, #FFF5F9 100%);
+  border-radius: 50% 50% 8px 8px;
+  border: 5px solid #FFD700;
+  box-shadow: 0 0 20px rgba(255,215,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+.beauty-mirror-shine {
+  position: absolute; top: 10%; right: 15%; width: 20%; height: 30%;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+.beauty-mirror-lights {
+  position: absolute; top: 10%;
+  width: 6px; height: 6px;
+  background: #FFF;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #FFD700, 0 0 15px #FFD700, 0 20px 0 #FFF, 0 20px 8px #FFD700, 0 40px 0 #FFF, 0 40px 8px #FFD700;
+}
+.beauty-mirror-lights-l { left: 2%; }
+.beauty-mirror-lights-r { right: 2%; }
+
+.beauty-makeup {
+  position: absolute; bottom: 28%;
+  border-radius: 3px;
+}
+.beauty-makeup-1 { left: 15%; width: 8%; height: 8%; background: #FF1493; border-radius: 50%; }
+.beauty-makeup-2 { left: 30%; width: 6%; height: 10%; background: linear-gradient(180deg, #FFD700, #C9A800); border-radius: 2px; }
+.beauty-makeup-3 { left: 42%; width: 5%; height: 7%; background: #87CEEB; border-radius: 50% 50% 5px 5px; }
+.beauty-hairbrush {
+  position: absolute; bottom: 27%; left: 52%; width: 12%; height: 5%;
+  background: linear-gradient(90deg, #D4A574, #8B6F47);
+  border-radius: 0 8px 8px 0;
+}
+.beauty-hairbrush::before {
+  content: '';
+  position: absolute; left: -40%; top: 0; width: 40%; height: 100%;
+  background: #FFB6C1;
+  border-radius: 5px 0 0 5px;
+}
+
+/* Stool */
+.beauty-stool {
+  position: absolute; bottom: 22%; left: 28%; width: 14%; height: 12%;
+}
+.beauty-stool-seat {
+  position: absolute; top: 0; left: 0; right: 0; height: 40%;
+  background: linear-gradient(180deg, #FF69B4, #FF1493);
+  border-radius: 50%;
+}
+.beauty-stool-leg {
+  position: absolute; bottom: 0; left: 40%; width: 20%; height: 60%;
+  background: #FFD700;
+  border-radius: 0 0 3px 3px;
+}
+
+/* Rug */
+.beauty-rug {
+  position: absolute; bottom: 5%; left: 20%; width: 35%; height: 10%;
+  background: radial-gradient(ellipse, #FFF 30%, #FFB6C1 70%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* Frame */
+.beauty-frame {
+  position: absolute; top: 8%; left: 5%; width: 12%; height: 18%;
+  background: #FFD700;
+  border-radius: 3px;
+  padding: 4px;
+}
+.beauty-frame-inner {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #FF69B4, #C71585);
+  border-radius: 2px;
+}
+
+/* Chandelier */
+.beauty-chandelier {
+  position: absolute; top: 0; left: 45%; width: 10%;
+}
+.beauty-chandelier-chain {
+  width: 2px; height: 30px; background: #FFD700; margin: 0 auto;
+}
+.beauty-chandelier-body {
+  width: 60px; height: 20px;
+  background: linear-gradient(180deg, #FFD700, #FFC107);
+  border-radius: 0 0 50% 50%;
+  margin: 0 auto;
+  box-shadow: 0 5px 20px rgba(255,215,0,0.3);
+}
+.beauty-chandelier-crystal {
+  position: absolute; width: 4px; height: 12px;
+  background: linear-gradient(180deg, #FFF, #FFD700);
+  border-radius: 0 0 50% 50%;
+}
+.beauty-crystal-1 { bottom: -12px; left: 25%; }
+.beauty-crystal-2 { bottom: -16px; left: 50%; transform: translateX(-50%); }
+.beauty-crystal-3 { bottom: -12px; right: 25%; }
+
+/* ============================================================
+   STUDIO FULL
+   ============================================================ */
+.studio-full {
+  background: #D8C4E9;
+}
+.studio-wall {
+  position: absolute; inset: 0; bottom: 22%;
+  background:
+    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.08) 60px, rgba(255,255,255,0.08) 62px),
+    linear-gradient(180deg, #D8C4E9 0%, #C4A8D8 100%);
+}
+.studio-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 22%;
+  background:
+    repeating-linear-gradient(90deg, #8B6F47 0px, #8B6F47 80px, #7A5F3A 80px, #7A5F3A 82px),
+    linear-gradient(180deg, #8B6F47, #6B4F2F);
+}
+
+/* Mood board */
+.studio-moodboard {
+  position: absolute; top: 5%; left: 5%; width: 25%; height: 35%;
+  background: #F0E6FF;
+  border: 3px solid #C4A8D8;
+  border-radius: 3px;
+}
+.studio-photo {
+  position: absolute; border-radius: 2px;
+}
+.studio-photo-1 { top: 8%; left: 5%; width: 42%; height: 40%; background: linear-gradient(135deg, #FF69B4, #C71585); }
+.studio-photo-2 { top: 8%; right: 5%; width: 42%; height: 35%; background: linear-gradient(135deg, #87CEEB, #4A9BD9); }
+.studio-photo-3 { bottom: 8%; left: 5%; width: 42%; height: 35%; background: linear-gradient(135deg, #FFD700, #FFA500); }
+.studio-photo-4 { bottom: 8%; right: 5%; width: 42%; height: 40%; background: linear-gradient(135deg, #9B59B6, #6C3483); }
+.studio-pin {
+  position: absolute; width: 8px; height: 8px; background: #FF1493; border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.studio-pin-1 { top: -4px; left: 30%; }
+.studio-pin-2 { top: -4px; right: 30%; }
+
+/* Backdrop */
+.studio-backdrop {
+  position: absolute; top: 8%; right: 8%; width: 30%; height: 55%;
+  background: linear-gradient(180deg, #FFF 0%, #F8F0FF 100%);
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+/* Camera */
+.studio-camera {
+  position: absolute; bottom: 22%; left: 35%; width: 20%; height: 45%;
+}
+.studio-tripod-leg {
+  position: absolute; bottom: 0; width: 3px; height: 55%;
+  background: #555;
+}
+.studio-tripod-leg-1 { left: 20%; transform-origin: top; transform: rotate(-8deg); }
+.studio-tripod-leg-2 { left: 50%; transform: translateX(-50%); }
+.studio-tripod-leg-3 { right: 20%; transform-origin: top; transform: rotate(8deg); }
+.studio-camera-body {
+  position: absolute; top: 15%; left: 15%; width: 70%; height: 25%;
+  background: linear-gradient(180deg, #333, #1a1a2e);
+  border-radius: 5px;
+}
+.studio-lens {
+  position: absolute; left: 15%; top: 15%; width: 35%; height: 70%;
+  background: radial-gradient(circle, #2a2a4a, #1a1a2e, #4a4a6a);
+  border-radius: 50%;
+  border: 3px solid #555;
+}
+.studio-lens::after {
+  content: '';
+  position: absolute; top: 20%; right: 20%; width: 25%; height: 25%;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+}
+.studio-flash {
+  position: absolute; top: -20%; right: 10%; width: 15%; height: 25%;
+  background: linear-gradient(180deg, #555, #333);
+  border-radius: 2px;
+}
+
+/* Light umbrella */
+.studio-light {
+  position: absolute; top: 15%; right: 35%; width: 15%; height: 50%;
+}
+.studio-light-stand {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 3px; height: 80%;
+  background: #555;
+}
+.studio-light-umbrella {
+  position: absolute; top: 0; left: 0; right: 0; height: 35%;
+  background: linear-gradient(180deg, #FFF, #F0F0F0);
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 3px 15px rgba(255,255,255,0.2);
+}
+
+/* Director chair */
+.studio-dir-chair {
+  position: absolute; bottom: 22%; left: 8%; width: 15%; height: 25%;
+}
+.studio-dir-back {
+  position: absolute; top: 0; left: 10%; right: 10%; height: 45%;
+  background: #333;
+  border-radius: 3px;
+}
+.studio-dir-back::after {
+  content: '';
+  position: absolute; top: 15%; left: 8%; right: 8%; height: 60%;
+  background: #C71585;
+  border-radius: 2px;
+}
+.studio-dir-seat {
+  position: absolute; top: 50%; left: 5%; right: 5%; height: 12%;
+  background: #C71585;
+  border-radius: 2px;
+}
+.studio-dir-legs {
+  position: absolute; bottom: 0; left: 15%; width: 4px; height: 40%;
+  background: #333;
+  box-shadow: calc(100% * 4) 0 0 #333;
+}
+
+/* Pendant lights */
+.studio-pendant {
+  position: absolute; top: 0; width: 2px; height: 10%;
+  background: #555;
+}
+.studio-pendant::after {
+  content: '';
+  position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);
+  width: 30px; height: 18px;
+  background: linear-gradient(180deg, #FFF, #F0E6FF);
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 3px 15px rgba(216,196,233,0.4);
+}
+.studio-pendant-1 { left: 30%; }
+.studio-pendant-2 { right: 25%; }
+
+/* ============================================================
+   LIVING ROOM FULL
+   ============================================================ */
+.living-full {
+  background: #FFB6A3;
+}
+.living-wall {
+  position: absolute; inset: 0; bottom: 22%;
+  background: linear-gradient(180deg, #FFB6A3 0%, #FFA08C 100%);
+}
+.living-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 22%;
+  background:
+    repeating-linear-gradient(90deg, #F5E6D3 0px, #F5E6D3 100px, #E8D5BF 100px, #E8D5BF 102px),
+    linear-gradient(180deg, #F5E6D3, #E8D5BF);
+}
+
+/* Window with city skyline */
+.living-window {
+  position: absolute; top: 5%; left: 50%; transform: translateX(-50%);
+  width: 35%; height: 40%;
+  background: linear-gradient(180deg, #1a0a2e 0%, #2d1b4e 40%, #9B59B6 100%);
+  border: 5px solid #FFB6A3;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.living-sky {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, #FFF 1px, transparent 1px),
+    radial-gradient(circle at 60% 15%, #FFF 1px, transparent 1px),
+    radial-gradient(circle at 80% 40%, #FFF 0.5px, transparent 0.5px),
+    radial-gradient(circle at 40% 25%, #FFD700 1px, transparent 1px),
+    linear-gradient(180deg, #1a0a2e, #2d1b4e);
+}
+.living-building {
+  position: absolute; bottom: 0;
+  background: #1a0a2e;
+}
+.living-building-1 { left: 5%; width: 18%; height: 45%; background: linear-gradient(180deg, #2d1b4e, #1a0a2e); }
+.living-building-1::before {
+  content: '';
+  position: absolute; inset: 8%;
+  background:
+    repeating-linear-gradient(180deg, transparent, transparent 8px, rgba(255,215,0,0.3) 8px, rgba(255,215,0,0.3) 10px);
+}
+.living-building-2 { left: 25%; width: 22%; height: 60%; background: linear-gradient(180deg, #3d2b5e, #2d1b4e); }
+.living-building-3 { right: 20%; width: 20%; height: 50%; background: linear-gradient(180deg, #4d3b6e, #3d2b5e); }
+.living-building-4 { right: 5%; width: 15%; height: 70%; background: linear-gradient(180deg, #2d1b4e, #1a0a2e); }
+.living-curtain {
+  position: absolute; top: -2px; width: 12%; height: 105%; z-index: 2;
+}
+.living-curtain-l { left: -4%; background: linear-gradient(90deg, #FF7F7F, rgba(255,127,127,0.2)); }
+.living-curtain-r { right: -4%; background: linear-gradient(270deg, #FF7F7F, rgba(255,127,127,0.2)); }
+
+/* Sofa */
+.living-sofa {
+  position: absolute; bottom: 22%; left: 5%; width: 45%; height: 25%;
+}
+.living-sofa-back {
+  position: absolute; top: 0; left: 5%; right: 5%; height: 55%;
+  background: linear-gradient(180deg, #C71585, #FF1493);
+  border-radius: 10px 10px 0 0;
+}
+.living-sofa-seat {
+  position: absolute; bottom: 10%; left: 0; right: 0; height: 40%;
+  background: linear-gradient(180deg, #FF1493, #FF69B4);
+  border-radius: 5px;
+}
+.living-sofa-arm {
+  position: absolute; bottom: 10%; width: 8%; height: 55%;
+  background: linear-gradient(180deg, #C71585, #FF1493);
+  border-radius: 8px 8px 3px 3px;
+}
+.living-sofa-arm-l { left: 0; }
+.living-sofa-arm-r { right: 0; }
+.living-cushion {
+  position: absolute; top: 15%; width: 20%; height: 30%;
+  border-radius: 5px;
+}
+.living-cushion-1 { left: 15%; background: #FFD700; transform: rotate(-5deg); }
+.living-cushion-2 { right: 15%; background: #87CEEB; transform: rotate(5deg); }
+
+/* Coffee table */
+.living-table {
+  position: absolute; bottom: 22%; right: 15%; width: 28%; height: 20%;
+}
+.living-table-top {
+  position: absolute; top: 35%; left: 0; right: 0; height: 12%;
+  background: linear-gradient(180deg, #D4A574, #B8864A);
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.living-table-leg {
+  position: absolute; bottom: 0; width: 6%; height: 60%;
+  background: #B8864A;
+  border-radius: 0 0 2px 2px;
+}
+.living-table-leg-l { left: 10%; }
+.living-table-leg-r { right: 10%; }
+.living-magazine {
+  position: absolute; top: 10%; border-radius: 2px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+.living-magazine-1 { left: 15%; width: 25%; height: 18%; background: #FF69B4; transform: rotate(-5deg); }
+.living-magazine-2 { left: 30%; width: 25%; height: 18%; background: #87CEEB; transform: rotate(3deg); }
+.living-magazine-3 { left: 45%; width: 25%; height: 18%; background: #FFD700; transform: rotate(-2deg); }
+.living-coffee-cup {
+  position: absolute; top: 15%; right: 10%; width: 10%; height: 12%;
+  background: #FFF;
+  border-radius: 0 0 3px 3px;
+  border: 2px solid #FFB6C1;
+}
+.living-coffee-cup::after {
+  content: '';
+  position: absolute; top: 15%; right: -45%; width: 35%; height: 50%;
+  border: 2px solid #FFB6C1;
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Lamp */
+.living-lamp {
+  position: absolute; bottom: 22%; right: 3%; width: 10%; height: 40%;
+}
+.living-lamp-shade {
+  position: absolute; top: 0; left: 5%; right: 5%; height: 30%;
+  background: linear-gradient(180deg, #FFD700, #FFC107);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+}
+.living-lamp-stand {
+  position: absolute; top: 28%; left: 45%; width: 10%; height: 60%;
+  background: #333;
+}
+.living-lamp-base {
+  position: absolute; bottom: 0; left: 25%; right: 25%; height: 8%;
+  background: #333;
+  border-radius: 50%;
+}
+.living-lamp-glow {
+  position: absolute; top: 10%; left: -20%; right: -20%; height: 40%;
+  background: radial-gradient(ellipse, rgba(255,215,0,0.15), transparent);
+  pointer-events: none;
+}
+
+/* Rug */
+.living-rug {
+  position: absolute; bottom: 5%; left: 15%; width: 50%; height: 12%;
+  background: radial-gradient(ellipse, #FFD700 30%, #FFC107 60%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+/* Wall art */
+.living-art {
+  position: absolute; top: 8%; left: 8%; width: 15%; height: 20%;
+  background: #FFD700;
+  border-radius: 3px;
+  padding: 4px;
+}
+.living-art-inner {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #FF7F7F, #FF1493);
+  border-radius: 2px;
+}
+
+/* ============================================================
+   OFFICE FULL
+   ============================================================ */
+.office-full {
+  background: #E91E90;
+}
+.office-wall {
+  position: absolute; inset: 0; bottom: 22%;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255,255,255,0.05) 30px, rgba(255,255,255,0.05) 32px),
+    linear-gradient(180deg, #E91E90 0%, #D4187F 100%);
+}
+.office-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 22%;
+  background: linear-gradient(180deg, #E8E8E8, #D0D0D0);
+}
+
+/* Bookshelf */
+.office-bookshelf {
+  position: absolute; top: 5%; left: 4%; width: 22%; height: 60%;
+  background: linear-gradient(180deg, #F5E6D3, #E8D5BF);
+  border: 3px solid #D4A574;
+  border-radius: 3px;
+}
+.office-shelf {
+  position: absolute; left: 0; right: 0; height: 3px; background: #D4A574;
+}
+.office-shelf-1 { top: 33%; }
+.office-shelf-2 { top: 66%; }
+.office-shelf-3 { bottom: 0; }
+.office-book {
+  position: absolute; bottom: 0; border-radius: 1px 1px 0 0;
+}
+/* Top shelf books */
+.office-book-1 { left: 5%; width: 12%; height: 28%; background: #FF69B4; bottom: 67%; }
+.office-book-2 { left: 20%; width: 10%; height: 25%; background: #87CEEB; bottom: 67%; }
+.office-book-3 { left: 33%; width: 14%; height: 30%; background: #FFD700; bottom: 67%; }
+/* Middle shelf books */
+.office-book-4 { left: 5%; width: 11%; height: 28%; background: #9B59B6; bottom: 34%; }
+.office-book-5 { left: 19%; width: 13%; height: 30%; background: #FF7F7F; bottom: 34%; }
+.office-book-6 { left: 35%; width: 10%; height: 26%; background: #2ECC71; bottom: 34%; }
+/* Bottom shelf books */
+.office-book-7 { left: 5%; width: 15%; height: 28%; background: #FF1493; bottom: 1%; }
+.office-book-8 { left: 22%; width: 12%; height: 30%; background: #4A9BD9; bottom: 1%; }
+.office-book-9 { left: 37%; width: 11%; height: 25%; background: #FFA500; bottom: 1%; }
+
+/* Desk */
+.office-desk {
+  position: absolute; bottom: 22%; left: 28%; width: 45%; height: 35%;
+}
+.office-desk-top {
+  position: absolute; top: 40%; left: 0; right: 0; height: 10%;
+  background: linear-gradient(180deg, #FFF, #F5F5F5);
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.office-desk-drawer {
+  position: absolute; top: 50%; right: 5%; width: 30%; height: 25%;
+  background: #F5F5F5;
+  border: 2px solid #EEE;
+  border-radius: 0 0 3px 3px;
+}
+.office-desk-drawer::after {
+  content: '';
+  position: absolute; top: 40%; left: 50%; transform: translateX(-50%);
+  width: 30%; height: 8%;
+  background: #C0C0C0;
+  border-radius: 3px;
+}
+.office-desk-leg {
+  position: absolute; bottom: 0; width: 5%; height: 55%;
+  background: #E8E8E8;
+}
+.office-desk-leg-l { left: 5%; }
+.office-desk-leg-r { right: 5%; }
+
+/* Laptop */
+.office-laptop {
+  position: absolute; top: 8%; left: 20%; width: 40%; height: 35%;
+}
+.office-laptop-screen {
+  position: absolute; top: 0; left: 5%; right: 5%; height: 75%;
+  background: #333;
+  border-radius: 5px 5px 0 0;
+  border: 3px solid #555;
+  overflow: hidden;
+}
+.office-laptop-content {
+  position: absolute; inset: 8%;
+  background: linear-gradient(180deg, #1a0a2e, #FF69B4);
+  border-radius: 2px;
+}
+.office-laptop-base {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 20%;
+  background: linear-gradient(180deg, #666, #555);
+  border-radius: 0 0 3px 3px;
+}
+
+/* Pen cup */
+.office-pen-cup {
+  position: absolute; top: 25%; right: 10%; width: 8%; height: 15%;
+  background: #FF69B4;
+  border-radius: 0 0 3px 3px;
+}
+.office-pen-cup::before {
+  content: '';
+  position: absolute; top: -40%; left: 20%; width: 15%; height: 40%;
+  background: #333;
+  transform: rotate(-10deg);
+  box-shadow: 8px -2px 0 #FF1493, 16px 2px 0 #87CEEB;
+}
+
+/* Chair */
+.office-chair {
+  position: absolute; bottom: 22%; right: 8%; width: 16%; height: 28%;
+}
+.office-chair-back {
+  position: absolute; top: 0; left: 10%; right: 10%; height: 50%;
+  background: linear-gradient(180deg, #FF69B4, #FF1493);
+  border-radius: 8px 8px 0 0;
+}
+.office-chair-seat {
+  position: absolute; top: 50%; left: 0; right: 0; height: 15%;
+  background: #FF1493;
+  border-radius: 3px;
+}
+.office-chair-stem {
+  position: absolute; top: 65%; left: 45%; width: 10%; height: 20%;
+  background: #555;
+}
+.office-chair-wheels {
+  position: absolute; bottom: 0; left: 15%; right: 15%; height: 8%;
+  background: #333;
+  border-radius: 3px;
+}
+
+/* Plant */
+.office-plant {
+  position: absolute; bottom: 22%; right: 28%; width: 10%; height: 25%;
+}
+.office-pot {
+  position: absolute; bottom: 0; left: 10%; right: 10%; height: 30%;
+  background: linear-gradient(180deg, #D4A574, #B8864A);
+  border-radius: 0 0 5px 5px;
+  clip-path: polygon(5% 0%, 95% 0%, 80% 100%, 20% 100%);
+}
+.office-leaf {
+  position: absolute; width: 45%; height: 40%;
+  background: #2ECC71;
+  border-radius: 0 80% 0 80%;
+}
+.office-leaf-1 { bottom: 30%; left: 0; transform: rotate(-40deg); background: #27AE60; }
+.office-leaf-2 { bottom: 45%; left: 20%; transform: rotate(-10deg); }
+.office-leaf-3 { bottom: 40%; right: 0; transform: rotate(30deg); background: #27AE60; }
+.office-leaf-4 { bottom: 55%; left: 30%; transform: rotate(10deg); }
+
+/* Pendant */
+.office-pendant {
+  position: absolute; top: 0; left: 50%; width: 2px; height: 8%;
+  background: #333;
+  transform: translateX(-50%);
+}
+.office-pendant::after {
+  content: '';
+  position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+  width: 40px; height: 20px;
+  background: linear-gradient(180deg, #FFF, #FFE4EE);
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 3px 15px rgba(255,105,180,0.2);
+}
+
+/* Clock */
+.office-clock {
+  position: absolute; top: 8%; right: 8%; width: 8%; aspect-ratio: 1;
+  background: #FFF;
+  border-radius: 50%;
+  border: 3px solid #FF69B4;
+}
+.office-clock-hand {
+  position: absolute; bottom: 50%; left: 50%; transform-origin: bottom center;
+  background: #333;
+}
+.office-clock-hand-h {
+  width: 2px; height: 25%; transform: translateX(-50%) rotate(30deg);
+}
+.office-clock-hand-m {
+  width: 1.5px; height: 35%; transform: translateX(-50%) rotate(-60deg);
+}
+.office-clock-dot {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 5px; height: 5px; background: #FF1493; border-radius: 50%;
+}
+
+/* ============================================================
+   LOUNGE FULL
+   ============================================================ */
+.lounge-full {
+  background: #3D1040;
+}
+.lounge-wall {
+  position: absolute; inset: 0; bottom: 22%;
+  background: linear-gradient(180deg, #3D1040 0%, #5A1A5E 50%, #6B2068 100%);
+}
+.lounge-floor {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 22%;
+  background: linear-gradient(180deg, #2A0A2E 0%, #1A0620 100%);
+}
+.lounge-floor::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,215,0,0.03) 50%, transparent 100%);
+}
+
+/* Bar */
+.lounge-bar {
+  position: absolute; top: 10%; right: 5%; width: 30%; height: 55%;
+}
+.lounge-bar-top {
+  position: absolute; top: 0; left: -3%; right: -3%; height: 8%;
+  background: linear-gradient(180deg, #8B4789, #6B2068);
+  border-radius: 3px;
+}
+.lounge-bar-body {
+  position: absolute; top: 8%; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, #4A1942, #3D1040);
+  border: 2px solid #6B2068;
+  border-radius: 0 0 3px 3px;
+}
+.lounge-bar-shelf {
+  position: absolute; top: 35%; left: 3%; right: 3%; height: 3px;
+  background: #6B2068;
+}
+.lounge-bottle {
+  position: absolute; top: 12%; border-radius: 3px 3px 0 0;
+}
+.lounge-bottle-1 { left: 8%; width: 12%; height: 22%; background: linear-gradient(180deg, #FFD700, #C9A800); }
+.lounge-bottle-2 { left: 25%; width: 10%; height: 18%; background: linear-gradient(180deg, #FF69B4, #C71585); border-radius: 5px 5px 0 0; }
+.lounge-bottle-3 { left: 40%; width: 12%; height: 20%; background: linear-gradient(180deg, #87CEEB, #4A9BD9); }
+.lounge-glass-row {
+  position: absolute; top: 40%; left: 8%; display: flex; gap: 8px;
+}
+.lounge-wine-glass {
+  width: 12px; height: 20px;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 0 0 50% 50%;
+  position: relative;
+}
+.lounge-wine-glass::after {
+  content: '';
+  position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+  width: 2px; height: 8px; background: rgba(255,255,255,0.3);
+}
+
+/* Armchair */
+.lounge-armchair {
+  position: absolute; bottom: 22%; left: 5%; width: 28%; height: 28%;
+}
+.lounge-armchair-back {
+  position: absolute; top: 0; left: 10%; right: 10%; height: 55%;
+  background: linear-gradient(180deg, #8B4789, #6B2068);
+  border-radius: 12px 12px 0 0;
+}
+.lounge-armchair-seat {
+  position: absolute; bottom: 10%; left: 5%; right: 5%; height: 35%;
+  background: linear-gradient(180deg, #9B5799, #8B4789);
+  border-radius: 5px;
+}
+.lounge-armchair-arm {
+  position: absolute; bottom: 10%; width: 12%; height: 50%;
+  background: linear-gradient(180deg, #8B4789, #6B2068);
+  border-radius: 8px 8px 3px 3px;
+}
+.lounge-arm-l { left: 0; }
+.lounge-arm-r { right: 0; }
+
+/* Side table */
+.lounge-side-table {
+  position: absolute; bottom: 22%; left: 38%; width: 15%; height: 22%;
+}
+.lounge-table-top {
+  position: absolute; top: 20%; left: 0; right: 0; height: 10%;
+  background: #FFD700;
+  border-radius: 50%;
+}
+.lounge-table-stem {
+  position: absolute; top: 30%; left: 45%; width: 10%; height: 50%;
+  background: #C9A800;
+}
+.lounge-table-base {
+  position: absolute; bottom: 0; left: 20%; right: 20%; height: 8%;
+  background: #FFD700;
+  border-radius: 50%;
+}
+
+/* Cocktail */
+.lounge-cocktail {
+  position: absolute; top: 0; left: 25%; width: 50%; height: 25%;
+}
+.lounge-cocktail-glass {
+  position: absolute; top: 0; left: 10%; right: 10%; height: 80%;
+  background: rgba(255,255,255,0.15);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.lounge-cocktail-liquid {
+  position: absolute; top: 25%; left: 15%; right: 15%; height: 50%;
+  background: linear-gradient(180deg, #FF69B4, #C71585);
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+.lounge-cocktail-olive {
+  position: absolute; top: 5%; left: 50%; transform: translateX(-50%);
+  width: 8px; height: 8px;
+  background: #2ECC71;
+  border-radius: 50%;
+}
+.lounge-cocktail-stick {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%) rotate(15deg);
+  width: 2px; height: 90%;
+  background: #FFD700;
+}
+
+/* Pendant */
+.lounge-pendant {
+  position: absolute; top: 0; left: 40%; width: 20%;
+}
+.lounge-pendant-cord {
+  width: 2px; height: 40px; background: #FFD700; margin: 0 auto;
+}
+.lounge-pendant-shade {
+  width: 60px; height: 30px;
+  background: linear-gradient(180deg, #FFD700, #FFC107);
+  border-radius: 0 0 50% 50%;
+  margin: 0 auto;
+  box-shadow: 0 5px 25px rgba(255,215,0,0.3);
+}
+.lounge-pendant-glow {
+  width: 120px; height: 60px;
+  background: radial-gradient(ellipse, rgba(255,215,0,0.15), transparent);
+  margin: 0 auto;
+}
+
+/* Record player */
+.lounge-record {
+  position: absolute; bottom: 35%; left: 55%; width: 15%; height: 12%;
+}
+.lounge-record-body {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #4A1942, #3D1040);
+  border: 2px solid #6B2068;
+  border-radius: 3px;
+}
+.lounge-record-disc {
+  position: absolute; top: 15%; left: 10%; width: 55%; height: 70%;
+  background: radial-gradient(circle, #333 20%, #1a1a1a 20%, #1a1a1a 40%, #333 40%, #333 42%, #1a1a1a 42%);
+  border-radius: 50%;
+  animation: spin 4s linear infinite;
+}
+.lounge-record-arm {
+  position: absolute; top: 10%; right: 15%; width: 3px; height: 50%;
+  background: #C0C0C0;
+  transform-origin: top right;
+  transform: rotate(25deg);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Neon sign */
+.lounge-neon {
+  position: absolute; top: 10%; left: 10%;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: #FF69B4;
+  text-shadow:
+    0 0 7px #FF69B4,
+    0 0 10px #FF69B4,
+    0 0 21px #FF69B4,
+    0 0 42px #FF1493,
+    0 0 82px #FF1493;
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+  0% { opacity: 0.8; text-shadow: 0 0 7px #FF69B4, 0 0 10px #FF69B4, 0 0 21px #FF69B4; }
+  100% { opacity: 1; text-shadow: 0 0 7px #FF69B4, 0 0 10px #FF69B4, 0 0 21px #FF69B4, 0 0 42px #FF1493, 0 0 82px #FF1493; }
+}
+
+/* Rug */
+.lounge-rug {
+  position: absolute; bottom: 5%; left: 10%; width: 40%; height: 12%;
+  background: radial-gradient(ellipse, rgba(139,71,137,0.4) 40%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* ============================================================
+   PROJECT VIEW
+   ============================================================ */
+.project-detail {
+  display: none;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 80px 1.5rem 3rem;
+}
+.project-detail.active {
+  display: block;
+  animation: fadeIn 0.5s ease-out;
+}
+
+#project-view {
+  background: linear-gradient(180deg, #FFF0F5 0%, #FFE4F0 100%);
+  overflow-y: auto;
+}
+
+.project-page {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(255,20,147,0.1);
+}
+
+.project-hero {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.project-hero-icon {
+  font-size: 4rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+}
+
+.project-content {
+  padding: 2rem;
+}
+
+.project-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #FF69B4, #FF1493);
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.project-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #1a0a2e;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.project-desc {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+}
+
+.project-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.2rem;
+  background: #FFF5F9;
+  border-radius: 12px;
+}
+
+.project-detail-item {
+  text-align: center;
+}
+.project-detail-label {
+  display: block;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  color: #FF1493;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+.project-detail-value {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+.project-gallery-item {
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.gallery-placeholder {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+}
+
+/* About Us specific */
+.about-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.about-person {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: #FFF5F9;
+  border-radius: 15px;
+}
+.about-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.8rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+}
+.about-person h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #1a0a2e;
+  margin: 0 0 0.3rem 0;
+}
+.about-role {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #FF1493;
+  margin: 0 0 0.8rem 0;
+}
+.about-bio {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-cta {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #FFF0F5, #FFE4F0);
+  border-radius: 15px;
+}
+.about-cta p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 0.8rem 0;
+}
+.about-email {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #FF1493;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.about-email:hover {
+  color: #C71585;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .rooms-grid {
+    gap: 3px;
+    border-width: 4px;
+  }
+  .room-name-banner {
+    font-size: 0.85rem;
+    padding: 6px 16px;
+  }
+  .back-btn {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+  .project-details {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+  .about-duo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .house-container { padding: 1rem 0.5rem; }
+  .roof { height: 60px; }
+  .roof-chimney { width: 25px; height: 35px; }
+  .foundation { height: 14px; }
+  .foundation-step { height: 8px; }
+}
