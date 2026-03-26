@@ -62,3 +62,21 @@ Implemented a state machine in JS for navigation with:
 - Gold glow border on interactive object hover
 
 Project pages use a clean card layout with hero gradient, campaign details, and placeholder gallery grid.
+
+---
+
+## 2026-03-26 17:38 — Splash Screen & House Enhancements
+
+Added a full-screen splash/landing screen:
+- Pink gradient background matching brand
+- "DREAMHOUSE" title with twinkling gold stars
+- "a portfolio by Naomi & Jana" subtitle
+- Animated "Enter" button that fades out the splash with a zoom effect
+
+Enhanced the house exterior:
+- Front door with gold knob on the foundation
+- Flower boxes on either side with animated flowers (pink, gold, blue)
+- Subtle radial gradient overlays on page background for depth
+- House slides up with scale animation when first loaded
+
+Cleaned up leftover Next.js scaffolding files — project is pure vanilla HTML/CSS/JS.

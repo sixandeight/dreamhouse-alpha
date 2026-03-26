@@ -2,7 +2,8 @@
 
 ## How to Navigate
 
-1. **Open the site** — you see the full dollhouse with 6 rooms in a 2x3 grid
+1. **Splash screen** — click "Enter" to enter the dreamhouse
+2. **Dollhouse view** — you see the full house with 6 rooms in a 2x3 grid
 2. **Hover over a room** — the room name and "Enter" button appear
 3. **Click a room** — zooms into the detailed room view
 4. **Find the glowing object** — hover over furniture pieces to find the clickable one (gold glow + "Click me" hint)
@@ -11,12 +12,20 @@
 
 ## What to Look At
 
+### Splash Screen
+- Full-screen pink gradient with twinkling gold stars
+- "Enter" button with hover animation
+- Smooth zoom-fade transition into the house
+
 ### House View
 - Roof with triangular clip-path, chimney, attic window
 - 6 rooms with distinct colors and miniature furniture
 - Dark pink "wall" dividers between rooms (grid gap)
+- Front door with gold knob
+- Flower boxes with animated flowers on either side
 - Floating star/heart/flower decorations
 - Hover effects on room cells (scale + glow)
+- House entrance animation (slides up)
 
 ### Room Details (click into each room)
 - **Bathroom** (top-left): Blue tiles, white bathtub, gold mirror, pink towel. Click the bathtub → Gillette
@@ -45,7 +54,7 @@
 
 1. **No real project images** — Gallery items are gradient placeholders. Real campaign images need to be added.
 2. **Responsive on very small screens** — The room illustrations are complex CSS and may not scale perfectly below 375px width. The layout adapts but furniture proportions may look off.
-3. **No loading state** — Google Fonts load asynchronously; there may be a brief flash of unstyled text.
+3. **Font loading** — Google Fonts load asynchronously. Splash screen covers this delay.
 4. **Custom cursor** — May not render on all browsers/OS. Falls back to default pointer.
 5. **Room furniture at mini scale** — Some furniture details are too small to be clearly visible in the house view. This is by design — the room names and hover labels help identify rooms.
 

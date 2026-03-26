@@ -7,9 +7,9 @@
 **Why vanilla?** This is fundamentally an illustrated interactive experience, not a web application. Every pixel of visual output comes from CSS — frameworks would add complexity without benefit. The entire site is 3 files (+ docs).
 
 ```
-index.html   — All markup for house, rooms, and project views
-styles.css   — CSS illustrations, layout, animations (~1800 lines)
-app.js       — Navigation state machine, sparkle effects (~190 lines)
+index.html   — All markup: splash screen, house, rooms, project views
+styles.css   — CSS illustrations, layout, animations (~2100 lines)
+app.js       — Splash screen, navigation state machine, sparkle effects (~260 lines)
 ```
 
 ## CSS Illustration Technique
