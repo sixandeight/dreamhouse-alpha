@@ -1,0 +1,320 @@
+/* ============================================
+   DREAMHOUSE — Animations & Polish
+   Hover effects, transitions, ambient anims
+   ============================================ */
+
+/* === View Transitions === */
+.view--house.active {
+  animation: fadeInUp 0.6s var(--ease-bounce) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.view--room.active {
+  animation: zoomIn 0.5s var(--ease-bounce) forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.view--project.active {
+  animation: slideInRight 0.5s var(--ease-smooth) forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === Room Cell Hover Effects === */
+.room-cell {
+  position: relative;
+}
+
+.room-cell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.room-cell:hover::before {
+  opacity: 1;
+}
+
+/* Staggered room entrance */
+.view--house.active .room-cell {
+  animation: roomPop 0.4s var(--ease-bounce) both;
+}
+
+.view--house.active .floor--top .room-cell:nth-child(1) { animation-delay: 0.1s; }
+.view--house.active .floor--top .room-cell:nth-child(2) { animation-delay: 0.2s; }
+.view--house.active .floor--top .room-cell:nth-child(3) { animation-delay: 0.3s; }
+.view--house.active .floor--bottom .room-cell:nth-child(1) { animation-delay: 0.15s; }
+.view--house.active .floor--bottom .room-cell:nth-child(2) { animation-delay: 0.25s; }
+.view--house.active .floor--bottom .room-cell:nth-child(3) { animation-delay: 0.35s; }
+
+@keyframes roomPop {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === Object Hover Effects === */
+.room-object {
+  position: relative;
+}
+
+/* Sparkle border on hover */
+.room-object::after {
+  content: '✦';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 18px;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: scale(0) rotate(0deg);
+  pointer-events: none;
+}
+
+.room-object:hover::after,
+.room-object:focus-visible::after {
+  opacity: 1;
+  transform: scale(1) rotate(180deg);
+  animation: star-spin 2s linear infinite;
+}
+
+/* === Project Hero Animations === */
+.project-hero-content {
+  animation: heroContent 0.6s var(--ease-smooth) 0.2s both;
+}
+
+@keyframes heroContent {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-tag {
+  animation: tagSlide 0.5s var(--ease-bounce) 0.3s both;
+}
+
+@keyframes tagSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Gallery Item Entrance === */
+.gallery-item {
+  animation: galleryPop 0.5s var(--ease-bounce) both;
+}
+
+.gallery-item:nth-child(1) { animation-delay: 0.4s; }
+.gallery-item:nth-child(2) { animation-delay: 0.5s; }
+.gallery-item:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes galleryPop {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Gallery item hover */
+.gallery-item {
+  transition: transform 0.3s var(--ease-bounce), box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* === About Card Entrance === */
+.about-card {
+  animation: cardSlide 0.5s var(--ease-bounce) both;
+}
+
+.about-card:nth-child(1) { animation-delay: 0.3s; }
+.about-card:nth-child(2) { animation-delay: 0.45s; }
+
+@keyframes cardSlide {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Ambient Animations === */
+
+/* Floating effect for room labels */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Gentle pulse for interactive objects */
+@keyframes gentlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0); }
+  50% { box-shadow: 0 0 0 8px rgba(255, 105, 180, 0.1); }
+}
+
+.room-object {
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+/* === Back Button Animation === */
+.back-btn {
+  animation: slideInLeft 0.4s var(--ease-bounce) 0.3s both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === Title Entrance === */
+.house-title {
+  animation: titleReveal 0.8s var(--ease-bounce) 0.2s both;
+}
+
+@keyframes titleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.house-subtitle {
+  animation: subtitleReveal 0.6s var(--ease-smooth) 0.5s both;
+}
+
+@keyframes subtitleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Roof shimmer === */
+.roof-main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  animation: roofShimmer 4s ease-in-out infinite;
+}
+
+@keyframes roofShimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* === Dollhouse shadow === */
+.dollhouse {
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+/* === Responsive adjustments === */
+@media (max-width: 768px) {
+  .house-header {
+    margin-bottom: var(--space-md);
+  }
+
+  .room-cell {
+    aspect-ratio: 1 / 0.7;
+  }
+
+  .roof {
+    height: 40px;
+  }
+
+  .roof-main { height: 35px; }
+
+  .house-base { height: 30px; }
+
+  .door-frame {
+    width: 22px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .room-cell {
+    aspect-ratio: 1 / 0.6;
+  }
+
+  .house-title {
+    font-size: 2rem;
+  }
+}
